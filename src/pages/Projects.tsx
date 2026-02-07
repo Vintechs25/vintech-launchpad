@@ -37,7 +37,7 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
             <motion.div key={p.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <ProjectCard title={p.title} category={p.category || ""} description={p.description} image={p.image_url || "/placeholder.svg"} />
+              <ProjectCard title={p.title} category={p.category || ""} description={p.description} image={p.image_url || "/placeholder.svg"} slug={p.slug} />
             </motion.div>
           ))}
         </div>
