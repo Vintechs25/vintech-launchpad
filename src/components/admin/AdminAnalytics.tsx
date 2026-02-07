@@ -1,8 +1,32 @@
 import { useAnalytics } from "@/hooks/useAnalytics";
-import { Activity, Eye, TrendingUp, Monitor, Smartphone, Tablet, RefreshCw } from "lucide-react";
+import { Activity, Eye, TrendingUp, Monitor, Smartphone, Tablet, RefreshCw, Globe } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 
 const DEVICE_COLORS = ["hsl(199, 89%, 48%)", "hsl(280, 65%, 60%)", "hsl(150, 60%, 50%)", "hsl(40, 90%, 55%)"];
+const COUNTRY_COLORS = ["hsl(199, 89%, 48%)", "hsl(150, 60%, 50%)", "hsl(280, 65%, 60%)", "hsl(40, 90%, 55%)", "hsl(350, 70%, 55%)", "hsl(20, 80%, 55%)", "hsl(170, 60%, 45%)", "hsl(240, 50%, 60%)", "hsl(60, 70%, 50%)", "hsl(310, 55%, 55%)"];
+
+const COUNTRY_NAMES: Record<string, string> = {
+  US: "United States", GB: "United Kingdom", CA: "Canada", AU: "Australia",
+  DE: "Germany", FR: "France", IN: "India", BR: "Brazil", JP: "Japan",
+  CN: "China", KR: "South Korea", MX: "Mexico", ES: "Spain", IT: "Italy",
+  NL: "Netherlands", SE: "Sweden", NO: "Norway", DK: "Denmark", FI: "Finland",
+  PL: "Poland", CZ: "Czech Republic", AT: "Austria", CH: "Switzerland",
+  BE: "Belgium", IE: "Ireland", PT: "Portugal", GR: "Greece", RO: "Romania",
+  HU: "Hungary", RS: "Serbia", UA: "Ukraine", RU: "Russia", TR: "Turkey",
+  SA: "Saudi Arabia", AE: "UAE", PK: "Pakistan", BD: "Bangladesh",
+  LK: "Sri Lanka", TH: "Thailand", VN: "Vietnam", MY: "Malaysia",
+  SG: "Singapore", ID: "Indonesia", PH: "Philippines", TW: "Taiwan",
+  HK: "Hong Kong", NZ: "New Zealand", AR: "Argentina", CL: "Chile",
+  CO: "Colombia", PE: "Peru", ZA: "South Africa", NG: "Nigeria",
+  KE: "Kenya", GH: "Ghana", EG: "Egypt", MA: "Morocco", TZ: "Tanzania",
+  ET: "Ethiopia", CI: "Côte d'Ivoire", DZ: "Algeria", TN: "Tunisia",
+  IQ: "Iraq", IR: "Iran", IS: "Iceland", Unknown: "Unknown",
+};
+
+const countryFlag = (code: string) => {
+  if (!code || code === "Unknown" || code.length !== 2) return "🌍";
+  return String.fromCodePoint(...[...code.toUpperCase()].map(c => 0x1F1E6 + c.charCodeAt(0) - 65));
+};
 
 const deviceIcons: Record<string, typeof Monitor> = {
   desktop: Monitor,
@@ -119,6 +143,46 @@ const AdminAnalytics = () => {
         </div>
       </div>
 
+      {/* Country Breakdown */}
+      <div className="bg-card rounded-xl border border-border p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <Globe size={18} className="text-muted-foreground" />
+          <h3 className="font-heading font-semibold text-foreground">Visitor Countries</h3>
+        </div>
+        {data.countryBreakdown.length === 0 ? (
+          <p className="text-sm text-muted-foreground text-center py-8">No geographic data yet</p>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-6">
+            <ResponsiveContainer width="100%" height={220}>
+              <PieChart>
+                <Pie data={data.countryBreakdown} dataKey="count" nameKey="country" cx="50%" cy="50%" outerRadius={80} innerRadius={45}>
+                  {data.countryBreakdown.map((_, i) => (
+                    <Cell key={i} fill={COUNTRY_COLORS[i % COUNTRY_COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip formatter={(value: number, name: string) => [value, `${countryFlag(name)} ${COUNTRY_NAMES[name] || name}`]} />
+              </PieChart>
+            </ResponsiveContainer>
+            <div className="space-y-2">
+              {data.countryBreakdown.map((c, i) => {
+                const total = data.countryBreakdown.reduce((s, x) => s + x.count, 0);
+                const pct = total > 0 ? ((c.count / total) * 100).toFixed(1) : "0";
+                return (
+                  <div key={c.country} className="flex items-center justify-between text-sm">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: COUNTRY_COLORS[i % COUNTRY_COLORS.length] }} />
+                      <span className="text-base">{countryFlag(c.country)}</span>
+                      <span className="text-foreground">{COUNTRY_NAMES[c.country] || c.country}</span>
+                    </div>
+                    <span className="text-muted-foreground font-mono text-xs">{c.count} ({pct}%)</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Top Pages & Recent Activity */}
       <div className="grid md:grid-cols-2 gap-6">
         {/* Top Pages */}
@@ -168,6 +232,7 @@ const AdminAnalytics = () => {
                 return (
                   <div key={i} className="px-5 py-2.5 flex items-center gap-3">
                     <Icon size={14} className="text-muted-foreground shrink-0" />
+                    <span className="text-base shrink-0">{countryFlag(view.country || "")}</span>
                     <span className="text-sm font-mono text-foreground truncate flex-1">{view.path}</span>
                     <span className="text-[10px] text-muted-foreground whitespace-nowrap">
                       {new Date(view.created_at).toLocaleTimeString()}

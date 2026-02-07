@@ -8,7 +8,8 @@ interface AnalyticsData {
   topPages: { path: string; count: number }[];
   deviceBreakdown: { device_type: string; count: number }[];
   dailyViews: { date: string; count: number }[];
-  recentViews: { path: string; created_at: string; device_type: string | null }[];
+  recentViews: { path: string; created_at: string; device_type: string | null; country: string | null }[];
+  countryBreakdown: { country: string; count: number }[];
   liveCount: number;
 }
 
@@ -21,6 +22,7 @@ export const useAnalytics = () => {
     deviceBreakdown: [],
     dailyViews: [],
     recentViews: [],
+    countryBreakdown: [],
     liveCount: 0,
   });
   const [loading, setLoading] = useState(true);
@@ -36,9 +38,9 @@ export const useAnalytics = () => {
       supabase.from("page_views").select("id", { count: "exact", head: true }),
       supabase.from("page_views").select("id", { count: "exact", head: true }).gte("created_at", todayStart),
       supabase.from("page_views").select("id", { count: "exact", head: true }).gte("created_at", weekStart),
-      supabase.from("page_views").select("path, created_at, device_type").order("created_at", { ascending: false }).limit(20),
+      supabase.from("page_views").select("path, created_at, device_type, country").order("created_at", { ascending: false }).limit(20),
       supabase.from("page_views").select("id", { count: "exact", head: true }).gte("created_at", fiveMinAgo),
-      supabase.from("page_views").select("path, device_type, created_at").gte("created_at", thirtyDaysAgo),
+      supabase.from("page_views").select("path, device_type, created_at, country").gte("created_at", thirtyDaysAgo),
     ]);
 
     // Compute top pages & device breakdown from 30-day data
@@ -46,6 +48,7 @@ export const useAnalytics = () => {
     const pathCounts: Record<string, number> = {};
     const deviceCounts: Record<string, number> = {};
     const dayCounts: Record<string, number> = {};
+    const countryCounts: Record<string, number> = {};
 
     allViews.forEach((v: any) => {
       pathCounts[v.path] = (pathCounts[v.path] || 0) + 1;
@@ -53,6 +56,8 @@ export const useAnalytics = () => {
       deviceCounts[dev] = (deviceCounts[dev] || 0) + 1;
       const day = v.created_at?.slice(0, 10);
       if (day) dayCounts[day] = (dayCounts[day] || 0) + 1;
+      const country = v.country || "Unknown";
+      countryCounts[country] = (countryCounts[country] || 0) + 1;
     });
 
     const topPages = Object.entries(pathCounts)
@@ -68,6 +73,11 @@ export const useAnalytics = () => {
       .sort((a, b) => a.date.localeCompare(b.date))
       .slice(-14);
 
+    const countryBreakdown = Object.entries(countryCounts)
+      .map(([country, count]) => ({ country, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10);
+
     setData({
       totalViews: totalRes.count || 0,
       todayViews: todayRes.count || 0,
@@ -76,6 +86,7 @@ export const useAnalytics = () => {
       deviceBreakdown,
       dailyViews,
       recentViews: (recentRes.data || []) as any,
+      countryBreakdown,
       liveCount: liveRes.count || 0,
     });
     setLoading(false);
