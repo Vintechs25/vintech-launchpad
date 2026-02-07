@@ -18,8 +18,9 @@ const Projects = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Projects — Vintech Consulting</title>
-        <meta name="description" content="Explore our portfolio of successful projects across web development, cybersecurity, and digital transformation." />
+        <title>Our Work — Web & Cybersecurity Projects | Vintech</title>
+        <meta name="description" content="See real results: web development, cybersecurity, and digital transformation projects delivered by Vintech Consulting." />
+        <link rel="canonical" href="https://vintech.co/projects" />
       </Helmet>
 
       <section className="gradient-hero pt-32 pb-16 overflow-hidden">

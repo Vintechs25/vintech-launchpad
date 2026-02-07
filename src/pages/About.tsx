@@ -21,10 +21,11 @@ const values = [
 
 const About = () => (
   <Layout>
-    <Helmet>
-      <title>About — Vintech Consulting</title>
-      <meta name="description" content="Learn about Vintech Consulting — our mission, story, and the team behind enterprise-grade technology solutions." />
-    </Helmet>
+      <Helmet>
+        <title>About Us — Mission & Team | Vintech Consulting</title>
+        <meta name="description" content="Learn about Vintech Consulting: our mission to make enterprise tech accessible, our experienced engineering team, and our results-driven approach." />
+        <link rel="canonical" href="https://vintech.co/about" />
+      </Helmet>
 
     <section className="gradient-hero pt-32 pb-16 overflow-hidden">
       <div className="container-wide px-4 sm:px-6 lg:px-8">

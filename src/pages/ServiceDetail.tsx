@@ -131,8 +131,17 @@ const ServiceDetail = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{service.title} — Vintech Consulting</title>
-        <meta name="description" content={service.description} />
+        <title>{service.title} Services — Vintech Consulting</title>
+        <meta name="description" content={service.description.slice(0, 155)} />
+        <link rel="canonical" href={`https://vintech.co/services/${slug}`} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description,
+          "provider": { "@type": "Organization", "name": "Vintech Consulting" },
+          "url": `https://vintech.co/services/${slug}`
+        })}</script>
       </Helmet>
 
       <section className="gradient-hero pt-32 pb-16">
