@@ -29,89 +29,84 @@ const TermsConditions = () => {
 
       <SectionWrapper>
         <article className="max-w-3xl mx-auto prose-custom space-y-8">
-          <p className="text-muted-foreground leading-relaxed">
-            These Terms & Conditions govern your use of the {company} website and services. By using our website or services, you agree to these terms.
-          </p>
+          {info?.terms_conditions ? (
+            info.terms_conditions.split("\n\n").map((paragraph, i) => (
+              <p key={i} className="text-muted-foreground leading-relaxed whitespace-pre-line">{paragraph}</p>
+            ))
+          ) : (
+            <>
+              <p className="text-muted-foreground leading-relaxed">
+                These Terms & Conditions govern your use of the {company} website and services. By using our website or services, you agree to these terms.
+              </p>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">1. Services</h2>
-            <p className="text-muted-foreground leading-relaxed mb-2">{company} provides:</p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-              <li>Web development</li>
-              <li>Software systems</li>
-              <li>IT support</li>
-              <li>Cybersecurity services</li>
-              <li>Consulting</li>
-              <li>Managed hosting and infrastructure management</li>
-            </ul>
-            <p className="text-muted-foreground leading-relaxed mt-2">Services are provided under separate agreements or proposals where applicable.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">1. Services</h2>
+                <p className="text-muted-foreground leading-relaxed mb-2">{company} provides:</p>
+                <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
+                  <li>Web development</li><li>Software systems</li><li>IT support</li><li>Cybersecurity services</li><li>Consulting</li><li>Managed hosting and infrastructure management</li>
+                </ul>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">2. Use of Website</h2>
-            <p className="text-muted-foreground leading-relaxed mb-2">You agree not to:</p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-              <li>Misuse the website</li>
-              <li>Attempt unauthorized access</li>
-              <li>Disrupt services</li>
-              <li>Upload malicious content</li>
-            </ul>
-            <p className="text-muted-foreground leading-relaxed mt-2">We may restrict access for violations.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">2. Use of Website</h2>
+                <p className="text-muted-foreground leading-relaxed">You agree not to misuse the website, attempt unauthorized access, disrupt services, or upload malicious content. We may restrict access for violations.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">3. Quotes & Proposals</h2>
-            <p className="text-muted-foreground leading-relaxed">All quotations are estimates only, subject to change based on project scope, and valid for a limited time. Final pricing is confirmed in writing.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">3. Quotes & Proposals</h2>
+                <p className="text-muted-foreground leading-relaxed">All quotations are estimates only, subject to change based on project scope, and valid for a limited time. Final pricing is confirmed in writing.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">4. Payments</h2>
-            <p className="text-muted-foreground leading-relaxed">Where services are paid, payment terms will be defined in agreements. Late payments may delay services. Refunds are subject to agreed terms.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">4. Payments</h2>
+                <p className="text-muted-foreground leading-relaxed">Where services are paid, payment terms will be defined in agreements. Late payments may delay services. Refunds are subject to agreed terms.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">5. Managed Hosting & Domains</h2>
-            <p className="text-muted-foreground leading-relaxed">Where {company} provides hosting or domain services: infrastructure may be provided through third-party providers, we manage configuration and support, uptime depends on external providers, and we are not liable for third-party outages.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">5. Managed Hosting & Domains</h2>
+                <p className="text-muted-foreground leading-relaxed">Where {company} provides hosting or domain services: infrastructure may be provided through third-party providers, we manage configuration and support, and we are not liable for third-party outages.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">6. Intellectual Property</h2>
-            <p className="text-muted-foreground leading-relaxed">Unless otherwise agreed, clients own their final deliverables upon full payment. {company} may showcase projects for portfolio purposes.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">6. Intellectual Property</h2>
+                <p className="text-muted-foreground leading-relaxed">Unless otherwise agreed, clients own their final deliverables upon full payment. {company} may showcase projects for portfolio purposes.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">7. Limitation of Liability</h2>
-            <p className="text-muted-foreground leading-relaxed">{company} is not liable for indirect damages, data loss, business interruption, or third-party failures. Maximum liability shall not exceed fees paid for services.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">7. Limitation of Liability</h2>
+                <p className="text-muted-foreground leading-relaxed">{company} is not liable for indirect damages, data loss, business interruption, or third-party failures. Maximum liability shall not exceed fees paid for services.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">8. Service Availability</h2>
-            <p className="text-muted-foreground leading-relaxed">We aim to maintain reliable services but do not guarantee uninterrupted availability or zero downtime. Maintenance may occur periodically.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">8. Service Availability</h2>
+                <p className="text-muted-foreground leading-relaxed">We aim to maintain reliable services but do not guarantee uninterrupted availability or zero downtime.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">9. Termination</h2>
-            <p className="text-muted-foreground leading-relaxed">We may suspend or terminate services for non-payment, misuse, or violation of terms. Clients may terminate according to agreements.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">9. Termination</h2>
+                <p className="text-muted-foreground leading-relaxed">We may suspend or terminate services for non-payment, misuse, or violation of terms.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">10. Changes</h2>
-            <p className="text-muted-foreground leading-relaxed">We may update these Terms at any time. Continued use indicates acceptance.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">10. Changes</h2>
+                <p className="text-muted-foreground leading-relaxed">We may update these Terms at any time. Continued use indicates acceptance.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">11. Governing Law</h2>
-            <p className="text-muted-foreground leading-relaxed">These terms are governed by the laws applicable in your operating jurisdiction.</p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">11. Governing Law</h2>
+                <p className="text-muted-foreground leading-relaxed">These terms are governed by the laws applicable in your operating jurisdiction.</p>
+              </section>
 
-          <section>
-            <h2 className="font-heading text-xl font-bold text-foreground mb-3">12. Contact</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              {company}<br />
-              Email: <a href={`mailto:${email}`} className="text-accent hover:underline">{email}</a><br />
-              Website: <a href={website} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">{website}</a>
-            </p>
-          </section>
+              <section>
+                <h2 className="font-heading text-xl font-bold text-foreground mb-3">12. Contact</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {company}<br />
+                  Email: <a href={`mailto:${email}`} className="text-accent hover:underline">{email}</a><br />
+                  Website: <a href={website} className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">{website}</a>
+                </p>
+              </section>
+            </>
+          )}
         </article>
       </SectionWrapper>
     </Layout>

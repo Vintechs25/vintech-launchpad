@@ -57,6 +57,8 @@ export type Database = {
           email: string | null
           id: string
           phone: string | null
+          privacy_policy: string | null
+          terms_conditions: string | null
           updated_at: string | null
           website: string | null
           whatsapp: string | null
@@ -67,6 +69,8 @@ export type Database = {
           email?: string | null
           id?: string
           phone?: string | null
+          privacy_policy?: string | null
+          terms_conditions?: string | null
           updated_at?: string | null
           website?: string | null
           whatsapp?: string | null
@@ -77,6 +81,8 @@ export type Database = {
           email?: string | null
           id?: string
           phone?: string | null
+          privacy_policy?: string | null
+          terms_conditions?: string | null
           updated_at?: string | null
           website?: string | null
           whatsapp?: string | null
