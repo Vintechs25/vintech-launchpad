@@ -20,7 +20,7 @@ const Projects = () => {
       <Helmet>
         <title>Our Work — Web & Cybersecurity Projects | Vintech</title>
         <meta name="description" content="See real results: web development, cybersecurity, and digital transformation projects delivered by Vintech Consulting." />
-        <link rel="canonical" href="https://vintech.co/projects" />
+        <link rel="canonical" href="https://vin-tech.top/projects" />
       </Helmet>
 
       <section className="gradient-hero pt-32 pb-16 overflow-hidden">

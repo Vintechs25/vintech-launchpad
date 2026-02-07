@@ -20,7 +20,7 @@ const Services = () => {
       <Helmet>
         <title>IT Services — Web Dev, Cybersecurity & Hosting | Vintech</title>
         <meta name="description" content="Explore Vintech's technology services: custom web development, cybersecurity audits, managed IT support, cloud hosting, and domain management." />
-        <link rel="canonical" href="https://vintech.co/services" />
+        <link rel="canonical" href="https://vin-tech.top/services" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ItemList",
@@ -29,7 +29,7 @@ const Services = () => {
             "@type": "ListItem",
             "position": i + 1,
             "name": s.title,
-            "url": `https://vintech.co/services/${s.slug}`
+            "url": `https://vin-tech.top/services/${s.slug}`
           }))
         })}</script>
       </Helmet>

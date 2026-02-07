@@ -65,7 +65,7 @@ const AdminLogin = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-              placeholder="admin@vintech.co"
+              placeholder="admin@vin-tech.top"
             />
           </div>
           <div>
