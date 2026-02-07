@@ -128,6 +128,36 @@ export type Database = {
         }
         Relationships: []
       }
+      page_views: {
+        Row: {
+          country: string | null
+          created_at: string
+          device_type: string | null
+          id: string
+          path: string
+          referrer: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          country?: string | null
+          created_at?: string
+          device_type?: string | null
+          id?: string
+          path: string
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          country?: string | null
+          created_at?: string
+          device_type?: string | null
+          id?: string
+          path?: string
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       projects: {
         Row: {
           category: string | null
