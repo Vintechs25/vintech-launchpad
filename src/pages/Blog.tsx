@@ -54,27 +54,28 @@ const Blog = () => (
     <SectionWrapper>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post, i) => (
-          <motion.article
-            key={post.slug}
-            custom={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="card-elevated p-6 flex flex-col"
-          >
-            <span className="text-xs font-medium text-accent uppercase tracking-wider">{post.category}</span>
-            <h2 className="font-heading font-semibold text-lg text-foreground mt-2 mb-3">{post.title}</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed flex-1">{post.excerpt}</p>
-            <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
-              <span className="text-xs text-muted-foreground flex items-center gap-1">
-                <Clock size={12} /> {new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
-              </span>
-              <span className="text-accent text-sm font-medium flex items-center gap-1">
-                Read more <ArrowRight size={12} />
-              </span>
-            </div>
-          </motion.article>
+          <Link to={`/blog/${post.slug}`} key={post.slug}>
+            <motion.article
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="card-elevated p-6 flex flex-col h-full"
+            >
+              <span className="text-xs font-medium text-accent uppercase tracking-wider">{post.category}</span>
+              <h2 className="font-heading font-semibold text-lg text-foreground mt-2 mb-3">{post.title}</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">{post.excerpt}</p>
+              <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
+                <span className="text-xs text-muted-foreground flex items-center gap-1">
+                  <Clock size={12} /> {new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                </span>
+                <span className="text-accent text-sm font-medium flex items-center gap-1">
+                  Read more <ArrowRight size={12} />
+                </span>
+              </div>
+            </motion.article>
+          </Link>
         ))}
       </div>
     </SectionWrapper>
