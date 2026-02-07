@@ -72,6 +72,17 @@ const BlogPost = () => {
       <Helmet>
         <title>{post.title} — Vintech Consulting Blog</title>
         <meta name="description" content={post.content[0].slice(0, 155)} />
+        <link rel="canonical" href={`https://vintech.co/blog/${slug}`} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "description": post.content[0].slice(0, 155),
+          "datePublished": post.date,
+          "author": { "@type": "Organization", "name": "Vintech Consulting" },
+          "publisher": { "@type": "Organization", "name": "Vintech Consulting" },
+          "url": `https://vintech.co/blog/${slug}`
+        })}</script>
       </Helmet>
 
       <section className="gradient-hero pt-32 pb-16 overflow-hidden">

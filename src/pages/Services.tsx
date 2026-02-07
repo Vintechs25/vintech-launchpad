@@ -18,8 +18,20 @@ const Services = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Services — Vintech Consulting</title>
-        <meta name="description" content="Explore Vintech's full suite of technology services including web development, cybersecurity, IT support, and managed hosting." />
+        <title>IT Services — Web Dev, Cybersecurity & Hosting | Vintech</title>
+        <meta name="description" content="Explore Vintech's technology services: custom web development, cybersecurity audits, managed IT support, cloud hosting, and domain management." />
+        <link rel="canonical" href="https://vintech.co/services" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Vintech Consulting Services",
+          "itemListElement": services.map((s, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": s.title,
+            "url": `https://vintech.co/services/${s.slug}`
+          }))
+        })}</script>
       </Helmet>
 
       <section className="gradient-hero pt-32 pb-16 overflow-hidden">

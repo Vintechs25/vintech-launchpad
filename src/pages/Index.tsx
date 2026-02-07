@@ -34,8 +34,19 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Vintech Consulting — Premium Technology Solutions</title>
-        <meta name="description" content="Vintech Consulting delivers enterprise-grade web development, cybersecurity, IT support, and managed solutions for growing businesses." />
+        <title>Vintech Consulting — Web Development, Cybersecurity & IT Solutions</title>
+        <meta name="description" content="Vintech Consulting delivers enterprise-grade web development, cybersecurity, IT support, and managed hosting for growing businesses worldwide. Get a free quote today." />
+        <link rel="canonical" href="https://vintech.co/" />
+        <meta property="og:title" content="Vintech Consulting — Web Development, Cybersecurity & IT Solutions" />
+        <meta property="og:description" content="Enterprise-grade web development, cybersecurity, IT support, and managed hosting for growing businesses." />
+        <meta property="og:url" content="https://vintech.co/" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Vintech Consulting — Web Development, Cybersecurity & IT Solutions",
+          "description": "Enterprise-grade web development, cybersecurity, IT support, and managed hosting for growing businesses worldwide.",
+          "url": "https://vintech.co/"
+        })}</script>
       </Helmet>
 
       {/* Hero */}

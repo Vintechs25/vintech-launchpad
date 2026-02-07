@@ -17,8 +17,9 @@ const Blog = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Blog — Vintech Consulting</title>
-        <meta name="description" content="Insights on web development, cybersecurity, IT strategy, and technology trends from the Vintech team." />
+        <title>Tech Blog — Web Dev & Cybersecurity Insights | Vintech</title>
+        <meta name="description" content="Expert insights on web development, cybersecurity best practices, IT strategy, and technology trends from the Vintech Consulting team." />
+        <link rel="canonical" href="https://vintech.co/blog" />
       </Helmet>
 
       <section className="gradient-hero pt-32 pb-16 overflow-hidden">
