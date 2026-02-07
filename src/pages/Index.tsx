@@ -128,7 +128,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {projects.slice(0, 3).map((p, i) => (
               <motion.div key={p.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <ProjectCard title={p.title} category={p.category || ""} description={p.description} image={p.image_url || "/placeholder.svg"} slug={p.slug} />
+                <ProjectCard title={p.title} category={p.category || ""} description={p.description} image={p.image_url || "/placeholder.svg"} />
               </motion.div>
             ))}
           </div>

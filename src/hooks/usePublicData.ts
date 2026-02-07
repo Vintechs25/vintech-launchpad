@@ -45,22 +45,6 @@ export function useProjects() {
   });
 }
 
-export function useProject(slug: string | undefined) {
-  return useQuery({
-    queryKey: ["project", slug],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .eq("slug", slug!)
-        .maybeSingle();
-      if (error) throw error;
-      return data;
-    },
-    enabled: !!slug,
-  });
-}
-
 export function useTestimonials() {
   return useQuery({
     queryKey: ["testimonials"],
