@@ -9,6 +9,8 @@ interface ContactInfo {
   phone: string | null;
   whatsapp: string | null;
   address: string | null;
+  website: string | null;
+  company_name: string | null;
 }
 
 const AdminContactInfo = () => {
@@ -20,7 +22,7 @@ const AdminContactInfo = () => {
   useEffect(() => {
     const fetch = async () => {
       const { data } = await supabase.from("contact_info").select("*").maybeSingle();
-      if (data) setInfo(data as ContactInfo);
+      if (data) setInfo({ ...data, website: (data as any).website ?? null, company_name: (data as any).company_name ?? null } as ContactInfo);
       setLoading(false);
     };
     fetch();
@@ -40,6 +42,16 @@ const AdminContactInfo = () => {
   return (
     <div className="space-y-4 max-w-md">
       <h2 className="font-heading font-semibold text-lg text-foreground">Contact Information</h2>
+      <div>
+        <label className="block text-sm font-medium text-foreground mb-1">Company Name</label>
+        <input value={info.company_name || ""} onChange={(e) => setInfo({ ...info, company_name: e.target.value })}
+          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-foreground mb-1">Website</label>
+        <input value={info.website || ""} onChange={(e) => setInfo({ ...info, website: e.target.value })} placeholder="https://vin-tech.top"
+          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+      </div>
       <div>
         <label className="block text-sm font-medium text-foreground mb-1">Email</label>
         <input value={info.email || ""} onChange={(e) => setInfo({ ...info, email: e.target.value })}
