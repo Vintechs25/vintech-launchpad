@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import vintechLogo from "@/assets/vintech-logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -37,16 +38,7 @@ const Navbar = () => {
     >
       <div className="container-wide flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg gradient-cta flex items-center justify-center">
-            <span className="text-accent-foreground font-heading font-bold text-sm">V</span>
-          </div>
-          <span
-            className={`font-heading font-bold text-lg tracking-tight ${
-              showSolid ? "text-foreground" : "text-primary-foreground"
-            }`}
-          >
-            Vintech
-          </span>
+          <img src={vintechLogo} alt="Vintech Consulting" className="h-9 w-auto" />
         </Link>
 
         {/* Desktop */}

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import vintechLogo from "@/assets/vintech-logo.png";
 
 const Footer = () => (
   <footer className="gradient-hero text-primary-foreground">
@@ -7,10 +8,7 @@ const Footer = () => (
       <div className="grid md:grid-cols-4 gap-10 mb-12">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-lg gradient-cta flex items-center justify-center">
-              <span className="text-accent-foreground font-heading font-bold text-sm">V</span>
-            </div>
-            <span className="font-heading font-bold text-lg">Vintech</span>
+            <img src={vintechLogo} alt="Vintech Consulting" className="h-10 w-auto" />
           </div>
           <p className="text-sm text-primary-foreground/70 leading-relaxed">
             Premium technology consulting — web development, cybersecurity, IT support, and managed solutions for growing businesses.
