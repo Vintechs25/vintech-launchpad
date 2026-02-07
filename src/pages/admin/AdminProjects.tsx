@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Plus, Pencil, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ImageUpload from "@/components/admin/ImageUpload";
+import ContentEditorToolbar from "@/components/admin/ContentEditorToolbar";
 
 interface Project {
   id: string;
@@ -64,7 +65,11 @@ const AdminProjects = () => {
         <h2 className="font-heading font-semibold text-lg text-foreground">{editing.id ? "Edit" : "New"} Project</h2>
         <input placeholder="Title" value={editing.title || ""} onChange={(e) => setEditing({ ...editing, title: e.target.value })} className={inputClass} />
         <input placeholder="Category" value={editing.category || ""} onChange={(e) => setEditing({ ...editing, category: e.target.value })} className={inputClass} />
-        <textarea placeholder="Description" rows={3} value={editing.description || ""} onChange={(e) => setEditing({ ...editing, description: e.target.value })} className={inputClass + " resize-none"} />
+        <div>
+          <label className="text-sm font-medium text-foreground mb-1 block">Description</label>
+          <ContentEditorToolbar onInsert={(text) => setEditing({ ...editing, description: (editing.description || "") + text })} />
+          <textarea placeholder="Description (paste image/YouTube/video URLs on their own line)" rows={5} value={editing.description || ""} onChange={(e) => setEditing({ ...editing, description: e.target.value })} className={inputClass + " resize-y"} />
+        </div>
         <textarea placeholder="Problem" rows={3} value={editing.problem || ""} onChange={(e) => setEditing({ ...editing, problem: e.target.value })} className={inputClass + " resize-none"} />
         <textarea placeholder="Solution" rows={3} value={editing.solution || ""} onChange={(e) => setEditing({ ...editing, solution: e.target.value })} className={inputClass + " resize-none"} />
         <textarea placeholder="Results" rows={3} value={editing.results || ""} onChange={(e) => setEditing({ ...editing, results: e.target.value })} className={inputClass + " resize-none"} />

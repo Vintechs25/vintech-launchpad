@@ -4,6 +4,7 @@ import { ArrowLeft, Clock, Tag, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SectionWrapper from "@/components/SectionWrapper";
+import RichContent from "@/components/RichContent";
 import { useBlogPost } from "@/hooks/usePublicData";
 
 const BlogPost = () => {
@@ -88,15 +89,7 @@ const BlogPost = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="max-w-3xl mx-auto prose-custom"
         >
-          {post.content.split("\n\n").map((paragraph, i) => (
-            <p
-              key={i}
-              className="text-muted-foreground leading-relaxed mb-6 text-base whitespace-pre-line"
-              dangerouslySetInnerHTML={{
-                __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>'),
-              }}
-            />
-          ))}
+          <RichContent content={post.content} />
           <div className="mt-12 pt-8 border-t border-border">
             <p className="text-foreground font-semibold mb-2">Ready to take action?</p>
             <Link to="/get-quote" className="btn-primary inline-flex items-center gap-2">

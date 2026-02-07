@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Plus, Pencil, Trash2, Eye, EyeOff } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ImageUpload from "@/components/admin/ImageUpload";
+import ContentEditorToolbar from "@/components/admin/ContentEditorToolbar";
 
 interface BlogPost {
   id: string;
@@ -78,7 +79,10 @@ const AdminBlog = () => {
         <input placeholder="Slug (auto-generated)" value={editing.slug || ""} onChange={(e) => setEditing({ ...editing, slug: e.target.value })} className={inputClass} />
         <input placeholder="Category" value={editing.category || ""} onChange={(e) => setEditing({ ...editing, category: e.target.value })} className={inputClass} />
         <textarea placeholder="Excerpt" rows={2} value={editing.excerpt || ""} onChange={(e) => setEditing({ ...editing, excerpt: e.target.value })} className={inputClass + " resize-none"} />
-        <textarea placeholder="Content (supports **bold** markdown)" rows={12} value={editing.content || ""} onChange={(e) => setEditing({ ...editing, content: e.target.value })} className={inputClass + " resize-y"} />
+        <div>
+          <ContentEditorToolbar onInsert={(text) => setEditing({ ...editing, content: (editing.content || "") + text })} />
+          <textarea placeholder="Content (supports **bold**, paste image/YouTube/video URLs on their own line)" rows={12} value={editing.content || ""} onChange={(e) => setEditing({ ...editing, content: e.target.value })} className={inputClass + " resize-y"} />
+        </div>
         <div>
           <label className="text-sm font-medium text-foreground mb-2 block">Cover Image</label>
           <ImageUpload value={editing.image_url || null} onChange={(url) => setEditing({ ...editing, image_url: url })} folder="blog" />
