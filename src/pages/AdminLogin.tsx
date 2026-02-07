@@ -1,20 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Shield, Loader2 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 
 const AdminLogin = () => {
-  const { signIn, isAdmin, loading } = useAuth();
+  const { signIn, isAdmin, user, loading } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
-  if (!loading && isAdmin) {
-    navigate("/admin/dashboard", { replace: true });
-  }
+  useEffect(() => {
+    if (!loading && user && isAdmin) {
+      navigate("/admin/dashboard", { replace: true });
+    }
+  }, [loading, user, isAdmin, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,8 +27,15 @@ const AdminLogin = () => {
       setError("Invalid email or password");
       setSubmitting(false);
     }
-    // Auth state change will redirect via the check above
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen gradient-hero flex items-center justify-center px-4">
