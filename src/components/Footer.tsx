@@ -6,7 +6,7 @@ import { useContactInfo } from "@/hooks/useContactInfo";
 const Footer = () => {
   const { data: info } = useContactInfo();
   const company = info?.company_name || "Vintech Consulting";
-  const email = info?.email || "hello@vintech.co";
+  const email = info?.email || "info@vin-tech.top";
   const phone = info?.phone || "+1 (234) 567-890";
   const address = info?.address || "Serving clients worldwide";
 

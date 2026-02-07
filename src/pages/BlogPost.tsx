@@ -41,7 +41,7 @@ const BlogPost = () => {
       <Helmet>
         <title>{post.title} — Vintech Consulting Blog</title>
         <meta name="description" content={excerpt} />
-        <link rel="canonical" href={`https://vintech.co/blog/${slug}`} />
+        <link rel="canonical" href={`https://vin-tech.top/blog/${slug}`} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BlogPosting",
@@ -51,7 +51,7 @@ const BlogPost = () => {
           "author": { "@type": "Organization", "name": "Vintech Consulting" },
           "publisher": { "@type": "Organization", "name": "Vintech Consulting" },
           ...(post.image_url ? { "image": post.image_url } : {}),
-          "url": `https://vintech.co/blog/${slug}`
+          "url": `https://vin-tech.top/blog/${slug}`
         })}</script>
       </Helmet>
 
