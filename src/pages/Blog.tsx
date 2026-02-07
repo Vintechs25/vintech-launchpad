@@ -42,8 +42,12 @@ const Blog = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="card-elevated p-6 flex flex-col h-full"
+                className="card-elevated flex flex-col h-full overflow-hidden"
               >
+                {post.image_url && (
+                  <img src={post.image_url} alt={post.title} className="w-full h-40 object-cover" />
+                )}
+                <div className="p-6 flex flex-col flex-1">
                 <span className="text-xs font-medium text-accent uppercase tracking-wider">{post.category}</span>
                 <h2 className="font-heading font-semibold text-lg text-foreground mt-2 mb-3">{post.title}</h2>
                 <p className="text-sm text-muted-foreground leading-relaxed flex-1">{post.excerpt}</p>
@@ -54,6 +58,7 @@ const Blog = () => {
                   <span className="text-accent text-sm font-medium flex items-center gap-1">
                     Read more <ArrowRight size={12} />
                   </span>
+                </div>
                 </div>
               </motion.article>
             </Link>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Plus, Pencil, Trash2, Eye, EyeOff } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ImageUpload from "@/components/admin/ImageUpload";
 
 interface BlogPost {
   id: string;
@@ -12,11 +13,14 @@ interface BlogPost {
   category: string | null;
   published: boolean;
   created_at: string;
+  image_url: string | null;
 }
 
 const emptyPost: Omit<BlogPost, "id" | "created_at"> = {
-  title: "", slug: "", excerpt: "", content: "", category: "", published: false,
+  title: "", slug: "", excerpt: "", content: "", category: "", published: false, image_url: null,
 };
+
+const inputClass = "w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring";
 
 const AdminBlog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -70,16 +74,15 @@ const AdminBlog = () => {
     return (
       <div className="space-y-4 max-w-2xl">
         <h2 className="font-heading font-semibold text-lg text-foreground">{editing.id ? "Edit Post" : "New Post"}</h2>
-        <input placeholder="Title" value={editing.title || ""} onChange={(e) => setEditing({ ...editing, title: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-        <input placeholder="Slug (auto-generated)" value={editing.slug || ""} onChange={(e) => setEditing({ ...editing, slug: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-        <input placeholder="Category" value={editing.category || ""} onChange={(e) => setEditing({ ...editing, category: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-        <textarea placeholder="Excerpt" rows={2} value={editing.excerpt || ""} onChange={(e) => setEditing({ ...editing, excerpt: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
-        <textarea placeholder="Content (supports **bold** markdown)" rows={12} value={editing.content || ""} onChange={(e) => setEditing({ ...editing, content: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-y" />
+        <input placeholder="Title" value={editing.title || ""} onChange={(e) => setEditing({ ...editing, title: e.target.value })} className={inputClass} />
+        <input placeholder="Slug (auto-generated)" value={editing.slug || ""} onChange={(e) => setEditing({ ...editing, slug: e.target.value })} className={inputClass} />
+        <input placeholder="Category" value={editing.category || ""} onChange={(e) => setEditing({ ...editing, category: e.target.value })} className={inputClass} />
+        <textarea placeholder="Excerpt" rows={2} value={editing.excerpt || ""} onChange={(e) => setEditing({ ...editing, excerpt: e.target.value })} className={inputClass + " resize-none"} />
+        <textarea placeholder="Content (supports **bold** markdown)" rows={12} value={editing.content || ""} onChange={(e) => setEditing({ ...editing, content: e.target.value })} className={inputClass + " resize-y"} />
+        <div>
+          <label className="text-sm font-medium text-foreground mb-2 block">Cover Image</label>
+          <ImageUpload value={editing.image_url || null} onChange={(url) => setEditing({ ...editing, image_url: url })} folder="blog" />
+        </div>
         <label className="flex items-center gap-2 text-sm text-foreground">
           <input type="checkbox" checked={editing.published || false} onChange={(e) => setEditing({ ...editing, published: e.target.checked })} />
           Published
@@ -104,9 +107,12 @@ const AdminBlog = () => {
         <div className="space-y-2">
           {posts.map((post) => (
             <div key={post.id} className="flex items-center justify-between p-4 bg-card rounded-lg border border-border">
-              <div>
-                <h3 className="font-medium text-foreground">{post.title}</h3>
-                <p className="text-xs text-muted-foreground">{post.category} · {new Date(post.created_at).toLocaleDateString()}</p>
+              <div className="flex items-center gap-3">
+                {post.image_url && <img src={post.image_url} alt="" className="w-12 h-12 rounded object-cover" />}
+                <div>
+                  <h3 className="font-medium text-foreground">{post.title}</h3>
+                  <p className="text-xs text-muted-foreground">{post.category} · {new Date(post.created_at).toLocaleDateString()}</p>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <button onClick={() => togglePublish(post)} className={`p-1.5 rounded ${post.published ? "text-green-600" : "text-muted-foreground"}`}>
