@@ -73,8 +73,8 @@ const Index = () => (
             Technology Consulting
           </span>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-            Build. Secure.{" "}
-            <span className="text-gradient">Scale.</span>
+            Secure. Host.{" "}
+            <span className="text-gradient">Empower.</span>
           </h1>
           <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8 max-w-lg">
             We help businesses build robust digital products, secure their infrastructure, and scale with confidence.
