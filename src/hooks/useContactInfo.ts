@@ -8,6 +8,8 @@ export interface ContactInfo {
   whatsapp: string | null;
   website: string | null;
   company_name: string | null;
+  privacy_policy: string | null;
+  terms_conditions: string | null;
 }
 
 const defaults: ContactInfo = {
@@ -17,6 +19,8 @@ const defaults: ContactInfo = {
   whatsapp: null,
   website: "https://vin-tech.top",
   company_name: "Vintech Consulting",
+  privacy_policy: null,
+  terms_conditions: null,
 };
 
 export function useContactInfo() {
@@ -37,6 +41,8 @@ export function useContactInfo() {
             whatsapp: data.whatsapp,
             website: (data as any).website ?? defaults.website,
             company_name: (data as any).company_name ?? defaults.company_name,
+            privacy_policy: (data as any).privacy_policy ?? null,
+            terms_conditions: (data as any).terms_conditions ?? null,
           }
         : defaults;
     },
