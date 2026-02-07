@@ -53,26 +53,32 @@ export type Database = {
       contact_info: {
         Row: {
           address: string | null
+          company_name: string | null
           email: string | null
           id: string
           phone: string | null
           updated_at: string | null
+          website: string | null
           whatsapp: string | null
         }
         Insert: {
           address?: string | null
+          company_name?: string | null
           email?: string | null
           id?: string
           phone?: string | null
           updated_at?: string | null
+          website?: string | null
           whatsapp?: string | null
         }
         Update: {
           address?: string | null
+          company_name?: string | null
           email?: string | null
           id?: string
           phone?: string | null
           updated_at?: string | null
+          website?: string | null
           whatsapp?: string | null
         }
         Relationships: []
