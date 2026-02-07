@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import Layout from "@/components/Layout";
 import SectionWrapper from "@/components/SectionWrapper";
 
@@ -19,10 +20,28 @@ const serviceOptions = [
 const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+
+    const { error } = await supabase.from("leads").insert({
+      name: form.name,
+      email: form.email,
+      phone: form.phone || null,
+      service: form.service || null,
+      message: form.message,
+    });
+
+    setSubmitting(false);
+
+    if (error) {
+      toast({ title: "Something went wrong", description: "Please try again.", variant: "destructive" });
+      return;
+    }
+
     toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
     setSubmitted(true);
   };
@@ -89,108 +108,56 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      maxLength={100}
-                      value={form.name}
-                      onChange={(e) => update("name", e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                      placeholder="John Smith"
-                    />
+                    <input type="text" required maxLength={100} value={form.name} onChange={(e) => update("name", e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" placeholder="John Smith" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Email Address *</label>
-                    <input
-                      type="email"
-                      required
-                      maxLength={255}
-                      value={form.email}
-                      onChange={(e) => update("email", e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                      placeholder="john@company.com"
-                    />
+                    <input type="email" required maxLength={255} value={form.email} onChange={(e) => update("email", e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" placeholder="john@company.com" />
                   </div>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      maxLength={20}
-                      value={form.phone}
-                      onChange={(e) => update("phone", e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                      placeholder="+1 (234) 567-890"
-                    />
+                    <input type="tel" maxLength={20} value={form.phone} onChange={(e) => update("phone", e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" placeholder="+1 (234) 567-890" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Service Needed *</label>
-                    <select
-                      required
-                      value={form.service}
-                      onChange={(e) => update("service", e.target.value)}
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                    >
+                    <select required value={form.service} onChange={(e) => update("service", e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring">
                       <option value="">Select a service</option>
-                      {serviceOptions.map((s) => (
-                        <option key={s} value={s}>{s}</option>
-                      ))}
+                      {serviceOptions.map((s) => <option key={s} value={s}>{s}</option>)}
                     </select>
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Project Details *</label>
-                  <textarea
-                    required
-                    maxLength={1000}
-                    rows={5}
-                    value={form.message}
-                    onChange={(e) => update("message", e.target.value)}
+                  <textarea required maxLength={1000} rows={5} value={form.message} onChange={(e) => update("message", e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
-                    placeholder="Tell us about your project, goals, and timeline..."
-                  />
+                    placeholder="Tell us about your project, goals, and timeline..." />
                 </div>
-                <button type="submit" className="btn-primary text-base px-8 py-4">
-                  {isQuote ? "Request Quote" : "Send Message"}
+                <button type="submit" disabled={submitting} className="btn-primary text-base px-8 py-4">
+                  {submitting ? "Sending..." : isQuote ? "Request Quote" : "Send Message"}
                 </button>
               </form>
             )}
           </motion.div>
 
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <motion.div className="space-y-6" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
             <div className="card-elevated p-6">
               <h3 className="font-heading font-semibold text-foreground mb-4">Contact Info</h3>
               <ul className="space-y-4 text-sm text-muted-foreground">
-                <li className="flex items-center gap-3">
-                  <Mail size={16} className="text-accent" />
-                  <a href="mailto:hello@vintech.co" className="hover:text-accent transition-colors">hello@vintech.co</a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Phone size={16} className="text-accent" />
-                  <a href="tel:+1234567890" className="hover:text-accent transition-colors">+1 (234) 567-890</a>
-                </li>
-                <li className="flex items-start gap-3">
-                  <MapPin size={16} className="text-accent mt-0.5" />
-                  <span>Serving clients worldwide</span>
-                </li>
+                <li className="flex items-center gap-3"><Mail size={16} className="text-accent" /><a href="mailto:hello@vintech.co" className="hover:text-accent transition-colors">hello@vintech.co</a></li>
+                <li className="flex items-center gap-3"><Phone size={16} className="text-accent" /><a href="tel:+1234567890" className="hover:text-accent transition-colors">+1 (234) 567-890</a></li>
+                <li className="flex items-start gap-3"><MapPin size={16} className="text-accent mt-0.5" /><span>Serving clients worldwide</span></li>
               </ul>
             </div>
             <div className="card-elevated p-6">
               <h3 className="font-heading font-semibold text-foreground mb-2">Prefer WhatsApp?</h3>
               <p className="text-sm text-muted-foreground mb-4">Chat with us directly for faster responses.</p>
-              <a
-                href="https://wa.me/1234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary w-full justify-center gap-2"
-              >
+              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center gap-2">
                 <MessageCircle size={18} /> Chat Now
               </a>
             </div>
