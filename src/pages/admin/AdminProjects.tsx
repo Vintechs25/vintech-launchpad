@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Plus, Pencil, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ImageUpload from "@/components/admin/ImageUpload";
 
 interface Project {
   id: string;
@@ -15,6 +16,8 @@ interface Project {
   image_url: string | null;
   sort_order: number;
 }
+
+const inputClass = "w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring";
 
 const AdminProjects = () => {
   const [items, setItems] = useState<Project[]>([]);
@@ -59,20 +62,16 @@ const AdminProjects = () => {
     return (
       <div className="space-y-4 max-w-2xl">
         <h2 className="font-heading font-semibold text-lg text-foreground">{editing.id ? "Edit" : "New"} Project</h2>
-        <input placeholder="Title" value={editing.title || ""} onChange={(e) => setEditing({ ...editing, title: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-        <input placeholder="Category" value={editing.category || ""} onChange={(e) => setEditing({ ...editing, category: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
-        <textarea placeholder="Description" rows={3} value={editing.description || ""} onChange={(e) => setEditing({ ...editing, description: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
-        <textarea placeholder="Problem" rows={3} value={editing.problem || ""} onChange={(e) => setEditing({ ...editing, problem: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
-        <textarea placeholder="Solution" rows={3} value={editing.solution || ""} onChange={(e) => setEditing({ ...editing, solution: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
-        <textarea placeholder="Results" rows={3} value={editing.results || ""} onChange={(e) => setEditing({ ...editing, results: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none" />
-        <input placeholder="Image URL" value={editing.image_url || ""} onChange={(e) => setEditing({ ...editing, image_url: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+        <input placeholder="Title" value={editing.title || ""} onChange={(e) => setEditing({ ...editing, title: e.target.value })} className={inputClass} />
+        <input placeholder="Category" value={editing.category || ""} onChange={(e) => setEditing({ ...editing, category: e.target.value })} className={inputClass} />
+        <textarea placeholder="Description" rows={3} value={editing.description || ""} onChange={(e) => setEditing({ ...editing, description: e.target.value })} className={inputClass + " resize-none"} />
+        <textarea placeholder="Problem" rows={3} value={editing.problem || ""} onChange={(e) => setEditing({ ...editing, problem: e.target.value })} className={inputClass + " resize-none"} />
+        <textarea placeholder="Solution" rows={3} value={editing.solution || ""} onChange={(e) => setEditing({ ...editing, solution: e.target.value })} className={inputClass + " resize-none"} />
+        <textarea placeholder="Results" rows={3} value={editing.results || ""} onChange={(e) => setEditing({ ...editing, results: e.target.value })} className={inputClass + " resize-none"} />
+        <div>
+          <label className="text-sm font-medium text-foreground mb-2 block">Project Image</label>
+          <ImageUpload value={editing.image_url || null} onChange={(url) => setEditing({ ...editing, image_url: url })} folder="projects" />
+        </div>
         <div className="flex gap-3">
           <button onClick={save} disabled={saving} className="btn-primary">{saving ? "Saving..." : "Save"}</button>
           <button onClick={() => setEditing(null)} className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground">Cancel</button>
@@ -91,9 +90,12 @@ const AdminProjects = () => {
         <div className="space-y-2">
           {items.map((item) => (
             <div key={item.id} className="flex items-center justify-between p-4 bg-card rounded-lg border border-border">
-              <div>
-                <h3 className="font-medium text-foreground">{item.title}</h3>
-                <p className="text-xs text-muted-foreground">{item.category}</p>
+              <div className="flex items-center gap-3">
+                {item.image_url && <img src={item.image_url} alt="" className="w-12 h-12 rounded object-cover" />}
+                <div>
+                  <h3 className="font-medium text-foreground">{item.title}</h3>
+                  <p className="text-xs text-muted-foreground">{item.category}</p>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <button onClick={() => setEditing(item)} className="p-1.5 text-muted-foreground hover:text-foreground"><Pencil size={16} /></button>

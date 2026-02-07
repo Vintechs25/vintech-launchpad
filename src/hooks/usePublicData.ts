@@ -15,6 +15,22 @@ export function useServices() {
   });
 }
 
+export function useService(slug: string | undefined) {
+  return useQuery({
+    queryKey: ["service", slug],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("services")
+        .select("*")
+        .eq("slug", slug!)
+        .maybeSingle();
+      if (error) throw error;
+      return data;
+    },
+    enabled: !!slug,
+  });
+}
+
 export function useProjects() {
   return useQuery({
     queryKey: ["projects"],
@@ -69,5 +85,21 @@ export function useBlogPosts() {
       if (error) throw error;
       return data;
     },
+  });
+}
+
+export function useBlogPost(slug: string | undefined) {
+  return useQuery({
+    queryKey: ["blog_post", slug],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("blog_posts")
+        .select("*")
+        .eq("slug", slug!)
+        .maybeSingle();
+      if (error) throw error;
+      return data;
+    },
+    enabled: !!slug,
   });
 }

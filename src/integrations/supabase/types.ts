@@ -21,6 +21,7 @@ export type Database = {
           created_at: string | null
           excerpt: string | null
           id: string
+          image_url: string | null
           published: boolean | null
           slug: string
           title: string
@@ -32,6 +33,7 @@ export type Database = {
           created_at?: string | null
           excerpt?: string | null
           id?: string
+          image_url?: string | null
           published?: boolean | null
           slug: string
           title: string
@@ -43,6 +45,7 @@ export type Database = {
           created_at?: string | null
           excerpt?: string | null
           id?: string
+          image_url?: string | null
           published?: boolean | null
           slug?: string
           title?: string
@@ -172,41 +175,50 @@ export type Database = {
       }
       services: {
         Row: {
+          benefits: Json | null
           created_at: string | null
           description: string
           faq: Json | null
           features: Json | null
           icon: string | null
           id: string
+          image_url: string | null
           process: Json | null
           slug: string
           sort_order: number | null
+          tagline: string | null
           title: string
           updated_at: string | null
         }
         Insert: {
+          benefits?: Json | null
           created_at?: string | null
           description: string
           faq?: Json | null
           features?: Json | null
           icon?: string | null
           id?: string
+          image_url?: string | null
           process?: Json | null
           slug: string
           sort_order?: number | null
+          tagline?: string | null
           title: string
           updated_at?: string | null
         }
         Update: {
+          benefits?: Json | null
           created_at?: string | null
           description?: string
           faq?: Json | null
           features?: Json | null
           icon?: string | null
           id?: string
+          image_url?: string | null
           process?: Json | null
           slug?: string
           sort_order?: number | null
+          tagline?: string | null
           title?: string
           updated_at?: string | null
         }
