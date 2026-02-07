@@ -38,7 +38,7 @@ const Navbar = () => {
     >
       <div className="container-wide flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <img src={vintechLogo} alt="Vintech Consulting" className="h-9 w-auto" />
+          <img src={vintechLogo} alt="Vintech Consulting" className="h-14 md:h-16 w-auto" />
         </Link>
 
         {/* Desktop */}
