@@ -80,8 +80,8 @@ We may update this Privacy Policy at any time. Updates will be posted on this pa
 10. Contact Us
 
 Vintech Consulting
-Email: info@vin-tech.top
-Website: https://vin-tech.top`;
+Email: info@vintechsystems.store
+Website: https://vintechsystems.store`;
 
 const DEFAULT_TERMS = `These Terms & Conditions govern your use of the Vintech Consulting website and services.
 
@@ -134,8 +134,8 @@ These terms are governed by the laws applicable in your operating jurisdiction.
 12. Contact
 
 Vintech Consulting
-Email: info@vin-tech.top
-Website: https://vin-tech.top`;
+Email: info@vintechsystems.store
+Website: https://vintechsystems.store`;
 
 const AdminContactInfo = () => {
   const [info, setInfo] = useState<ContactInfo | null>(null);
@@ -182,7 +182,7 @@ const AdminContactInfo = () => {
         </div>
         <div>
           <label className="block text-sm font-medium text-foreground mb-1">Website</label>
-          <input value={info.website || ""} onChange={(e) => setInfo({ ...info, website: e.target.value })} placeholder="https://vin-tech.top"
+          <input value={info.website || ""} onChange={(e) => setInfo({ ...info, website: e.target.value })} placeholder="https://vintechsystems.store"
             className="w-full px-4 py-3 rounded-lg border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
         </div>
         <div>

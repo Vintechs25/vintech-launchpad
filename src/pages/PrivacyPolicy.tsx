@@ -7,8 +7,8 @@ import { useContactInfo } from "@/hooks/useContactInfo";
 const PrivacyPolicy = () => {
   const { data: info } = useContactInfo();
   const company = info?.company_name || "Vintech Consulting";
-  const email = info?.email || "info@vin-tech.top";
-  const website = info?.website || "https://vin-tech.top";
+  const email = info?.email || "info@vintechsystems.store";
+  const website = info?.website || "https://vintechsystems.store";
 
   return (
     <Layout>

@@ -15,4 +15,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://vin-tech.top/sitemap.xml
+Sitemap: https://vintechsystems.store/sitemap.xml

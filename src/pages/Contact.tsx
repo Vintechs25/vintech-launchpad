@@ -53,7 +53,7 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
       <Helmet>
         <title>{isQuote ? "Get a Free Quote" : "Contact Us"} — Vintech Consulting</title>
         <meta name="description" content={isQuote ? "Request a free, no-obligation quote for web development, cybersecurity, IT support, or managed hosting from Vintech Consulting." : "Contact Vintech Consulting for web development, cybersecurity, and IT consulting. We respond within 24 hours."} />
-        <link rel="canonical" href={isQuote ? "https://vin-tech.top/get-quote" : "https://vin-tech.top/contact"} />
+        <link rel="canonical" href={isQuote ? "https://vintechsystems.store/get-quote" : "https://vintechsystems.store/contact"} />
       </Helmet>
 
       <section className="gradient-hero pt-32 pb-16 overflow-hidden">
@@ -150,7 +150,7 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
             <div className="card-elevated p-6">
               <h3 className="font-heading font-semibold text-foreground mb-4">Contact Info</h3>
               <ul className="space-y-4 text-sm text-muted-foreground">
-                <li className="flex items-center gap-3"><Mail size={16} className="text-accent" /><a href="mailto:info@vin-tech.top" className="hover:text-accent transition-colors">info@vin-tech.top</a></li>
+                <li className="flex items-center gap-3"><Mail size={16} className="text-accent" /><a href="mailto:info@vintechsystems.store" className="hover:text-accent transition-colors">info@vintechsystems.store</a></li>
                 <li className="flex items-center gap-3"><Phone size={16} className="text-accent" /><a href="tel:+1234567890" className="hover:text-accent transition-colors">+1 (234) 567-890</a></li>
                 <li className="flex items-start gap-3"><MapPin size={16} className="text-accent mt-0.5" /><span>Serving clients worldwide</span></li>
               </ul>

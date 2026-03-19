@@ -36,16 +36,16 @@ const Index = () => {
       <Helmet>
         <title>Vintech Consulting — Web Development, Cybersecurity & IT Solutions</title>
         <meta name="description" content="Vintech Consulting delivers enterprise-grade web development, cybersecurity, IT support, and managed hosting for growing businesses worldwide. Get a free quote today." />
-        <link rel="canonical" href="https://vin-tech.top/" />
+        <link rel="canonical" href="https://vintechsystems.store/" />
         <meta property="og:title" content="Vintech Consulting — Web Development, Cybersecurity & IT Solutions" />
         <meta property="og:description" content="Enterprise-grade web development, cybersecurity, IT support, and managed hosting for growing businesses." />
-        <meta property="og:url" content="https://vin-tech.top/" />
+        <meta property="og:url" content="https://vintechsystems.store/" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebPage",
           "name": "Vintech Consulting — Web Development, Cybersecurity & IT Solutions",
           "description": "Enterprise-grade web development, cybersecurity, IT support, and managed hosting for growing businesses worldwide.",
-          "url": "https://vin-tech.top/"
+          "url": "https://vintechsystems.store/"
         })}</script>
       </Helmet>
 
