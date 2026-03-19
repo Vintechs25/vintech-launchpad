@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, Zap, Users, Award, Clock
+  ArrowRight, Zap, Users, Award, Clock, CheckCircle2
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -14,10 +14,17 @@ import { useServices, useProjects, useTestimonials, useStats } from "@/hooks/use
 import heroBg from "@/assets/hero-bg.jpg";
 
 const whyUs = [
-  { icon: Zap, title: "Fast Delivery", desc: "Agile methodology means your project launches on time." },
-  { icon: Users, title: "Dedicated Team", desc: "A senior engineer assigned to your account, not a ticket queue." },
+  { icon: Zap, title: "Fast Delivery", desc: "Agile methodology means your project launches on time, every time." },
+  { icon: Users, title: "Dedicated Team", desc: "A senior engineer assigned to your account — not a ticket queue." },
   { icon: Award, title: "Proven Track Record", desc: "50+ projects delivered for clients across 3 continents." },
   { icon: Clock, title: "24/7 Support", desc: "Round-the-clock monitoring and rapid incident response." },
+];
+
+const trustBadges = [
+  "Enterprise Security",
+  "99.9% Uptime SLA",
+  "ISO Compliant",
+  "24/7 Monitoring",
 ];
 
 const fadeUp = {
@@ -50,21 +57,30 @@ const Index = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 gradient-hero opacity-80" />
+          <div className="absolute inset-0 gradient-hero opacity-85" />
+          <div className="absolute inset-0 pattern-dots" />
         </div>
         <div className="relative container-wide px-4 sm:px-6 lg:px-8 py-32">
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-2xl">
-            <span className="inline-block text-accent text-sm font-semibold tracking-widest uppercase mb-4">Technology Consulting</span>
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }} className="max-w-2xl">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="inline-block text-accent text-sm font-semibold tracking-widest uppercase mb-4"
+            >
+              Technology Consulting
+            </motion.span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-              Secure. Host. <span className="text-gradient">Empower.</span>
+              Secure. Host.{" "}
+              <span className="text-gradient">Empower.</span>
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8 max-w-lg">
               We help businesses build robust digital products, secure their infrastructure, and scale with confidence.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mb-10">
               <Link to="/get-quote" className="btn-primary text-base px-8 py-4">
                 Get a Free Quote <ArrowRight size={18} className="ml-2" />
               </Link>
@@ -72,6 +88,20 @@ const Index = () => {
                 Our Services
               </Link>
             </div>
+            {/* Trust badges */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="flex flex-wrap gap-4"
+            >
+              {trustBadges.map((badge) => (
+                <span key={badge} className="inline-flex items-center gap-1.5 text-xs font-medium text-primary-foreground/60">
+                  <CheckCircle2 size={13} className="text-accent" />
+                  {badge}
+                </span>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -79,10 +109,11 @@ const Index = () => {
       {/* Services */}
       {services.length > 0 && (
         <SectionWrapper>
-          <div className="text-center mb-12">
+          <div className="text-center mb-14">
             <span className="text-accent text-sm font-semibold tracking-widest uppercase">What We Do</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">Our Services</h2>
-            <p className="text-muted-foreground mt-3 max-w-lg mx-auto">End-to-end technology solutions tailored for your business.</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-3">Our Services</h2>
+            <div className="section-divider mb-4" />
+            <p className="text-muted-foreground max-w-lg mx-auto">End-to-end technology solutions tailored for your business.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
@@ -96,18 +127,19 @@ const Index = () => {
 
       {/* Why Choose Us */}
       <SectionWrapper className="bg-secondary">
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <span className="text-accent text-sm font-semibold tracking-widest uppercase">Why Vintech</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">Why Choose Us</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-3">Why Choose Us</h2>
+          <div className="section-divider" />
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {whyUs.map((item, i) => (
-            <motion.div key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center">
-              <div className="w-14 h-14 rounded-xl gradient-cta flex items-center justify-center mx-auto mb-4">
-                <item.icon size={24} className="text-accent-foreground" />
+            <motion.div key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center group">
+              <div className="w-16 h-16 rounded-2xl gradient-cta flex items-center justify-center mx-auto mb-5 transition-transform duration-300 group-hover:scale-110 shadow-lg" style={{ boxShadow: "0 8px 24px -6px hsl(199 89% 48% / 0.3)" }}>
+                <item.icon size={26} className="text-accent-foreground" />
               </div>
               <h3 className="font-heading font-semibold text-foreground mb-2">{item.title}</h3>
-              <p className="text-sm text-muted-foreground">{item.desc}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -116,12 +148,12 @@ const Index = () => {
       {/* Featured Projects */}
       {projects.length > 0 && (
         <SectionWrapper>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
             <div>
               <span className="text-accent text-sm font-semibold tracking-widest uppercase">Our Work</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">Featured Projects</h2>
             </div>
-            <Link to="/projects" className="text-accent font-medium text-sm flex items-center gap-1 mt-4 md:mt-0 hover:underline">
+            <Link to="/projects" className="text-accent font-medium text-sm flex items-center gap-1 mt-4 md:mt-0 hover:underline underline-offset-4 transition-all">
               View all projects <ArrowRight size={14} />
             </Link>
           </div>
@@ -138,7 +170,8 @@ const Index = () => {
       {/* Stats */}
       {stats.length > 0 && (
         <SectionWrapper dark>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="pattern-dots absolute inset-0 pointer-events-none" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative">
             {stats.map((s) => (
               <StatsCounter key={s.id} value={s.value} suffix={s.suffix || ""} label={s.label} />
             ))}
@@ -149,9 +182,10 @@ const Index = () => {
       {/* Testimonials */}
       {testimonials.length > 0 && (
         <SectionWrapper>
-          <div className="text-center mb-12">
+          <div className="text-center mb-14">
             <span className="text-accent text-sm font-semibold tracking-widest uppercase">Testimonials</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">What Our Clients Say</h2>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-3">What Our Clients Say</h2>
+            <div className="section-divider" />
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
@@ -165,9 +199,10 @@ const Index = () => {
 
       {/* CTA Banner */}
       <SectionWrapper dark>
-        <div className="text-center max-w-2xl mx-auto">
+        <div className="pattern-dots absolute inset-0 pointer-events-none" />
+        <div className="text-center max-w-2xl mx-auto relative">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Ready to Transform Your Business?</h2>
-          <p className="text-primary-foreground/70 mb-8">Let's discuss how Vintech can help you build, secure, and scale your technology.</p>
+          <p className="text-primary-foreground/70 mb-8 text-lg">Let's discuss how Vintech can help you build, secure, and scale your technology.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/get-quote" className="btn-primary text-base px-8 py-4">Get a Free Quote <ArrowRight size={18} className="ml-2" /></Link>
             <Link to="/contact" className="btn-outline text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 text-base px-8 py-4">Contact Us</Link>
