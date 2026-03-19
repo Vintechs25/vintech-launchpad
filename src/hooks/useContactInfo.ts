@@ -18,7 +18,7 @@ const defaults: ContactInfo = {
   address: null,
   whatsapp: null,
   website: "https://vintechsystems.store",
-  company_name: "Vintech Consulting",
+  company_name: "Vintech Systems and Consulting",
   privacy_policy: null,
   terms_conditions: null,
 };

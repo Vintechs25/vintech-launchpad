@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-secondary flex">
       <Helmet>
-        <title>Admin Dashboard — Vintech Consulting</title>
+        <title>Admin Dashboard — Vintech Systems and Consulting</title>
       </Helmet>
 
       <AdminSidebar />

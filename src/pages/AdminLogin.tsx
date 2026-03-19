@@ -40,7 +40,7 @@ const AdminLogin = () => {
   return (
     <div className="min-h-screen gradient-hero flex items-center justify-center px-4">
       <Helmet>
-        <title>Admin Login — Vintech Consulting</title>
+        <title>Admin Login — Vintech Systems and Consulting</title>
       </Helmet>
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
