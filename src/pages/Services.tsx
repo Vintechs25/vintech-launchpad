@@ -24,7 +24,7 @@ const Services = () => {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ItemList",
-          "name": "Vintech Consulting Services",
+          "name": "Vintech Systems and Consulting Services",
           "itemListElement": services.map((s, i) => ({
             "@type": "ListItem",
             "position": i + 1,

@@ -22,8 +22,8 @@ const values = [
 const About = () => (
   <Layout>
       <Helmet>
-        <title>About Us — Mission & Team | Vintech Consulting</title>
-        <meta name="description" content="Learn about Vintech Consulting: our mission to make enterprise tech accessible, our experienced engineering team, and our results-driven approach." />
+        <title>About Us — Mission & Team | Vintech Systems and Consulting</title>
+        <meta name="description" content="Learn about Vintech Systems and Consulting: our mission to make enterprise tech accessible, our experienced engineering team, and our results-driven approach." />
         <link rel="canonical" href="https://vintechsystems.store/about" />
       </Helmet>
 
@@ -44,7 +44,7 @@ const About = () => (
             Technology That Drives Business Forward
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Vintech Consulting was founded with a clear mission: deliver enterprise-grade technology solutions to growing businesses without the enterprise price tag.
+            Vintech Systems and Consulting was founded with a clear mission: deliver enterprise-grade technology solutions to growing businesses without the enterprise price tag.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Our founder saw too many businesses struggling with unreliable tech vendors, cookie-cutter solutions, and inflated costs. Vintech was built to change that — offering dedicated engineering talent, transparent processes, and solutions that actually scale.

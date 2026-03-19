@@ -39,7 +39,7 @@ const BlogPost = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{post.title} — Vintech Consulting Blog</title>
+        <title>{post.title} — Vintech Systems and Consulting Blog</title>
         <meta name="description" content={excerpt} />
         <link rel="canonical" href={`https://vintechsystems.store/blog/${slug}`} />
         <script type="application/ld+json">{JSON.stringify({
@@ -48,8 +48,8 @@ const BlogPost = () => {
           "headline": post.title,
           "description": excerpt,
           "datePublished": post.created_at,
-          "author": { "@type": "Organization", "name": "Vintech Consulting" },
-          "publisher": { "@type": "Organization", "name": "Vintech Consulting" },
+          "author": { "@type": "Organization", "name": "Vintech Systems and Consulting" },
+          "publisher": { "@type": "Organization", "name": "Vintech Systems and Consulting" },
           ...(post.image_url ? { "image": post.image_url } : {}),
           "url": `https://vintechsystems.store/blog/${slug}`
         })}</script>

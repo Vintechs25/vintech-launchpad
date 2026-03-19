@@ -51,8 +51,8 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{isQuote ? "Get a Free Quote" : "Contact Us"} — Vintech Consulting</title>
-        <meta name="description" content={isQuote ? "Request a free, no-obligation quote for web development, cybersecurity, IT support, or managed hosting from Vintech Consulting." : "Contact Vintech Consulting for web development, cybersecurity, and IT consulting. We respond within 24 hours."} />
+        <title>{isQuote ? "Get a Free Quote" : "Contact Us"} — Vintech Systems and Consulting</title>
+        <meta name="description" content={isQuote ? "Request a free, no-obligation quote for web development, cybersecurity, IT support, or managed hosting from Vintech Systems and Consulting." : "Contact Vintech Systems and Consulting for web development, cybersecurity, and IT consulting. We respond within 24 hours."} />
         <link rel="canonical" href={isQuote ? "https://vintechsystems.store/get-quote" : "https://vintechsystems.store/contact"} />
       </Helmet>
 

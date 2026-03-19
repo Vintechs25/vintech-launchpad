@@ -6,7 +6,7 @@ import { useContactInfo } from "@/hooks/useContactInfo";
 
 const TermsConditions = () => {
   const { data: info } = useContactInfo();
-  const company = info?.company_name || "Vintech Consulting";
+  const company = info?.company_name || "Vintech Systems and Consulting";
   const email = info?.email || "info@vintechsystems.store";
   const website = info?.website || "https://vintechsystems.store";
 

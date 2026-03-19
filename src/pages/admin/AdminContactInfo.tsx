@@ -15,7 +15,7 @@ interface ContactInfo {
   terms_conditions: string | null;
 }
 
-const DEFAULT_PRIVACY = `Vintech Consulting ("Vintech", "we", "our", or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard information when you visit our website or use our services.
+const DEFAULT_PRIVACY = `Vintech Systems and Consulting ("Vintech", "we", "our", or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard information when you visit our website or use our services.
 
 By accessing our website, you agree to the terms of this Privacy Policy.
 
@@ -79,17 +79,17 @@ We may update this Privacy Policy at any time. Updates will be posted on this pa
 
 10. Contact Us
 
-Vintech Consulting
+Vintech Systems and Consulting
 Email: info@vintechsystems.store
 Website: https://vintechsystems.store`;
 
-const DEFAULT_TERMS = `These Terms & Conditions govern your use of the Vintech Consulting website and services.
+const DEFAULT_TERMS = `These Terms & Conditions govern your use of the Vintech Systems and Consulting website and services.
 
 By using our website or services, you agree to these terms.
 
 1. Services
 
-Vintech Consulting provides web development, software systems, IT support, cybersecurity services, consulting, managed hosting and infrastructure management. Services are provided under separate agreements or proposals where applicable.
+Vintech Systems and Consulting provides web development, software systems, IT support, cybersecurity services, consulting, managed hosting and infrastructure management. Services are provided under separate agreements or proposals where applicable.
 
 2. Use of Website
 
@@ -133,7 +133,7 @@ These terms are governed by the laws applicable in your operating jurisdiction.
 
 12. Contact
 
-Vintech Consulting
+Vintech Systems and Consulting
 Email: info@vintechsystems.store
 Website: https://vintechsystems.store`;
 
