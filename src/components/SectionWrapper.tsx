@@ -10,9 +10,9 @@ interface SectionWrapperProps {
 const SectionWrapper = ({ children, className = "", id, dark }: SectionWrapperProps) => (
   <section
     id={id}
-    className={`section-padding ${dark ? "gradient-hero text-primary-foreground" : ""} ${className}`}
+    className={`section-padding relative ${dark ? "gradient-hero text-primary-foreground overflow-hidden" : ""} ${className}`}
   >
-    <div className="container-wide">{children}</div>
+    <div className="container-wide relative">{children}</div>
   </section>
 );
 
