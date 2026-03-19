@@ -13,11 +13,11 @@ export interface ContactInfo {
 }
 
 const defaults: ContactInfo = {
-  email: "info@vin-tech.top",
+  email: "info@vintechsystems.store",
   phone: null,
   address: null,
   whatsapp: null,
-  website: "https://vin-tech.top",
+  website: "https://vintechsystems.store",
   company_name: "Vintech Consulting",
   privacy_policy: null,
   terms_conditions: null,

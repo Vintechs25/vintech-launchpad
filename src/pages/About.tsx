@@ -24,7 +24,7 @@ const About = () => (
       <Helmet>
         <title>About Us — Mission & Team | Vintech Consulting</title>
         <meta name="description" content="Learn about Vintech Consulting: our mission to make enterprise tech accessible, our experienced engineering team, and our results-driven approach." />
-        <link rel="canonical" href="https://vin-tech.top/about" />
+        <link rel="canonical" href="https://vintechsystems.store/about" />
       </Helmet>
 
     <section className="gradient-hero pt-32 pb-16 overflow-hidden">

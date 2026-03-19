@@ -19,7 +19,7 @@ const Blog = () => {
       <Helmet>
         <title>Tech Blog — Web Dev & Cybersecurity Insights | Vintech</title>
         <meta name="description" content="Expert insights on web development, cybersecurity best practices, IT strategy, and technology trends from the Vintech Consulting team." />
-        <link rel="canonical" href="https://vin-tech.top/blog" />
+        <link rel="canonical" href="https://vintechsystems.store/blog" />
       </Helmet>
 
       <section className="gradient-hero pt-32 pb-16 overflow-hidden">
