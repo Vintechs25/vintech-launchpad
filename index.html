@@ -16,7 +16,7 @@
     
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://vintechsystems.store/" />
-    <meta property="og:image" content="/vintech-logo.png">
+    <meta property="og:image" content="https://vintechsystems.store/vintech-logo.png">
     <meta property="og:site_name" content="Vintech Systems and Consulting" />
     <meta property="og:locale" content="en_US" />
 
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     
     
-    <meta name="twitter:image" content="/vintech-logo.png">
+    <meta name="twitter:image" content="https://vintechsystems.store/vintech-logo.png">
 
     <!-- Structured Data: Organization -->
     <script type="application/ld+json">
@@ -32,19 +32,47 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Vintech Systems and Consulting",
-      "description": "Enterprise-grade web development, cybersecurity, IT support, and managed hosting solutions.",
+      "alternateName": "Vintech Systems",
+      "description": "Enterprise-grade web development, cybersecurity, IT support, and managed hosting solutions for growing businesses.",
       "url": "https://vintechsystems.store",
       "logo": "https://vintechsystems.store/vintech-logo.png",
+      "image": "https://vintechsystems.store/vintech-logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-234-567-890",
         "contactType": "sales",
-        "email": "info@vintechsystems.store"
+        "email": "info@vintechsystems.store",
+        "availableLanguage": ["English"]
       },
       "sameAs": [],
       "serviceType": ["Web Development", "Cybersecurity", "IT Support", "Technology Consulting", "Managed Hosting", "Domain Management"],
-      "areaServed": "Worldwide",
-      "priceRange": "$$"
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": -1.2921, "longitude": 36.8219 },
+        "geoRadius": "50000"
+      },
+      "priceRange": "$$",
+      "knowsAbout": ["Web Development", "Cybersecurity", "Cloud Hosting", "IT Consulting", "Domain Management"]
+    }
+    </script>
+
+    <!-- Structured Data: WebSite (enables sitelinks search box) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Vintech Systems and Consulting",
+      "alternateName": "Vintech Systems",
+      "url": "https://vintechsystems.store",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://vintechsystems.store/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
     <meta property="og:title" content="Vintech Systems and Consulting — Web Development, Cybersecurity &amp; IT Solutions">
