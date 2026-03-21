@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SectionWrapper from "@/components/SectionWrapper";
 
-const tools = ["React", "TypeScript", "Node.js", "AWS", "Azure", "Docker", "Kubernetes", "PostgreSQL", "MongoDB", "Terraform", "Python", "Go"];
+const tools = ["React", "TypeScript", "Node.js", "WordPress", "Docker", "PostgreSQL", "MySQL", "Python", "Linux", "cPanel", "Cloudflare", "AWS"];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,10 +13,10 @@ const fadeUp = {
 };
 
 const values = [
-  { icon: Target, title: "Mission", desc: "Make enterprise tech accessible to every business" },
-  { icon: Eye, title: "Vision", desc: "Be the most trusted tech partner globally" },
-  { icon: Users, title: "Team", desc: "Senior engineers with 10+ years experience" },
-  { icon: Code2, title: "Approach", desc: "Agile, transparent, and results-driven" },
+  { icon: Target, title: "Mission", desc: "Deliver reliable tech solutions that help businesses grow" },
+  { icon: Eye, title: "Vision", desc: "Be East Africa's most trusted technology partner" },
+  { icon: Users, title: "Team", desc: "Skilled engineers passionate about solving real problems" },
+  { icon: Code2, title: "Approach", desc: "Transparent pricing, clear timelines, honest communication" },
 ];
 
 const About = () => (
@@ -44,13 +44,13 @@ const About = () => (
             Technology That Drives Business Forward
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Vintech Systems and Consulting was founded with a clear mission: deliver enterprise-grade technology solutions to growing businesses without the enterprise price tag.
+            Vintech Systems and Consulting is a Nairobi-based technology firm offering web development, cybersecurity, IT support, and managed hosting to businesses across Kenya and East Africa.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Our founder saw too many businesses struggling with unreliable tech vendors, cookie-cutter solutions, and inflated costs. Vintech was built to change that — offering dedicated engineering talent, transparent processes, and solutions that actually scale.
+            We started because too many businesses were paying too much for unreliable tech vendors and cookie-cutter solutions. Vintech was built to offer honest, hands-on engineering — with transparent pricing and real accountability.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Today, we serve clients across multiple continents, from startups to mid-market enterprises, helping them secure, host, and empower their digital infrastructure.
+            Whether you're a startup launching your first website or an established company upgrading your infrastructure, we're here to help you build with confidence.
           </p>
         </motion.div>
         <div className="grid grid-cols-2 gap-6">
