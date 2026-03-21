@@ -44,13 +44,13 @@ const About = () => (
             Technology That Drives Business Forward
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Vintech Systems and Consulting was founded with a clear mission: deliver enterprise-grade technology solutions to growing businesses without the enterprise price tag.
+            Vintech Systems and Consulting is a Nairobi-based technology firm offering web development, cybersecurity, IT support, and managed hosting to businesses across Kenya and East Africa.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Our founder saw too many businesses struggling with unreliable tech vendors, cookie-cutter solutions, and inflated costs. Vintech was built to change that — offering dedicated engineering talent, transparent processes, and solutions that actually scale.
+            We started because too many businesses were paying too much for unreliable tech vendors and cookie-cutter solutions. Vintech was built to offer honest, hands-on engineering — with transparent pricing and real accountability.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Today, we serve clients across multiple continents, from startups to mid-market enterprises, helping them secure, host, and empower their digital infrastructure.
+            Whether you're a startup launching your first website or an established company upgrading your infrastructure, we're here to help you build with confidence.
           </p>
         </motion.div>
         <div className="grid grid-cols-2 gap-6">

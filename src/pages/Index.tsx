@@ -14,17 +14,17 @@ import { useServices, useProjects, useTestimonials, useStats } from "@/hooks/use
 import heroBg from "@/assets/hero-bg.jpg";
 
 const whyUs = [
-  { icon: Zap, title: "Fast Delivery", desc: "Agile methodology means your project launches on time, every time." },
-  { icon: Users, title: "Dedicated Team", desc: "A senior engineer assigned to your account — not a ticket queue." },
-  { icon: Award, title: "Proven Track Record", desc: "50+ projects delivered for clients across 3 continents." },
-  { icon: Clock, title: "24/7 Support", desc: "Round-the-clock monitoring and rapid incident response." },
+  { icon: Zap, title: "Fast Turnaround", desc: "We use agile sprints so your project moves from concept to launch quickly." },
+  { icon: Users, title: "Dedicated Support", desc: "You work directly with our engineers — no outsourced call centres." },
+  { icon: Award, title: "Real Results", desc: "Clients across East Africa trust us to deliver reliable, scalable solutions." },
+  { icon: Clock, title: "Ongoing Maintenance", desc: "We don't disappear after launch — ongoing support and monitoring included." },
 ];
 
 const trustBadges = [
-  "Enterprise Security",
-  "99.9% Uptime SLA",
-  "ISO Compliant",
-  "24/7 Monitoring",
+  "Secure Infrastructure",
+  "Nairobi-Based Team",
+  "Transparent Pricing",
+  "Ongoing Support",
 ];
 
 const fadeUp = {
