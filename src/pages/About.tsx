@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SectionWrapper from "@/components/SectionWrapper";
 
-const tools = ["React", "TypeScript", "Node.js", "AWS", "Azure", "Docker", "Kubernetes", "PostgreSQL", "MongoDB", "Terraform", "Python", "Go"];
+const tools = ["React", "TypeScript", "Node.js", "WordPress", "Docker", "PostgreSQL", "MySQL", "Python", "Linux", "cPanel", "Cloudflare", "AWS"];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,10 +13,10 @@ const fadeUp = {
 };
 
 const values = [
-  { icon: Target, title: "Mission", desc: "Make enterprise tech accessible to every business" },
-  { icon: Eye, title: "Vision", desc: "Be the most trusted tech partner globally" },
-  { icon: Users, title: "Team", desc: "Senior engineers with 10+ years experience" },
-  { icon: Code2, title: "Approach", desc: "Agile, transparent, and results-driven" },
+  { icon: Target, title: "Mission", desc: "Deliver reliable tech solutions that help businesses grow" },
+  { icon: Eye, title: "Vision", desc: "Be East Africa's most trusted technology partner" },
+  { icon: Users, title: "Team", desc: "Skilled engineers passionate about solving real problems" },
+  { icon: Code2, title: "Approach", desc: "Transparent pricing, clear timelines, honest communication" },
 ];
 
 const About = () => (
