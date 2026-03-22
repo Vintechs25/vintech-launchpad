@@ -41,7 +41,7 @@ const ServiceDetail = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{service.title} Services — Vintech Systems and Consulting</title>
+        <title>{service.title} Services in Kenya — Vintech Systems and Consulting</title>
         <meta name="description" content={service.description.slice(0, 155)} />
         <link rel="canonical" href={`https://vintechsystems.store/services/${slug}`} />
         <script type="application/ld+json">{JSON.stringify({
@@ -50,6 +50,7 @@ const ServiceDetail = () => {
           "name": service.title,
           "description": service.description,
           "provider": { "@type": "Organization", "name": "Vintech Systems and Consulting" },
+          "areaServed": { "@type": "Country", "name": "Kenya" },
           "url": `https://vintechsystems.store/services/${slug}`
         })}</script>
       </Helmet>
@@ -73,7 +74,7 @@ const ServiceDetail = () => {
           <p className="text-muted-foreground text-lg leading-relaxed mb-8">{service.description}</p>
           {benefits.length > 0 && (
             <>
-              <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Key Benefits</h2>
+              <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Why This Matters for Your Business</h2>
               <ul className="grid sm:grid-cols-2 gap-3 mb-12">
                 {benefits.map((b) => (
                   <li key={b} className="flex items-center gap-2 text-foreground">
@@ -85,7 +86,7 @@ const ServiceDetail = () => {
           )}
           {features.length > 0 && (
             <>
-              <h2 className="font-heading text-2xl font-bold text-foreground mb-4">What's Included</h2>
+              <h2 className="font-heading text-2xl font-bold text-foreground mb-4">What You Get</h2>
               <ul className="grid sm:grid-cols-2 gap-3 mb-12">
                 {features.map((f) => (
                   <li key={f} className="flex items-center gap-2 text-muted-foreground">
@@ -100,7 +101,8 @@ const ServiceDetail = () => {
 
       {process.length > 0 && (
         <SectionWrapper className="bg-secondary">
-          <h2 className="font-heading text-2xl font-bold text-foreground mb-8">Our Process</h2>
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-2">How We Work</h2>
+          <p className="text-muted-foreground mb-8">A clear, transparent process so you always know exactly what's happening and what comes next.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {process.map((p, i) => (
               <div key={i} className="relative">
@@ -124,10 +126,10 @@ const ServiceDetail = () => {
 
       <SectionWrapper dark>
         <div className="text-center">
-          <h2 className="font-heading text-3xl font-bold text-primary-foreground mb-4">Ready to get started?</h2>
-          <p className="text-primary-foreground/70 mb-8">Let's discuss how our {service.title.toLowerCase()} services can help your business.</p>
+          <h2 className="font-heading text-3xl font-bold text-primary-foreground mb-4">Ready to Get Started?</h2>
+          <p className="text-primary-foreground/70 mb-8">Let's discuss how our {service.title.toLowerCase()} services can give your business a real competitive advantage. Free consultation — no obligations.</p>
           <Link to="/get-quote" className="btn-primary text-base px-8 py-4">
-            Get a Free Quote <ArrowRight size={18} className="ml-2" />
+            Get Your Free Quote <ArrowRight size={18} className="ml-2" />
           </Link>
         </div>
       </SectionWrapper>
