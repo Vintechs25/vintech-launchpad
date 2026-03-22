@@ -152,8 +152,8 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
               <h3 className="font-heading font-semibold text-foreground mb-4">Get in Touch Directly</h3>
               <ul className="space-y-4 text-sm text-muted-foreground">
                 <li className="flex items-center gap-3"><Mail size={16} className="text-accent" /><a href="mailto:info@vintechsystems.store" className="hover:text-accent transition-colors">info@vintechsystems.store</a></li>
-                <li className="flex items-center gap-3"><Phone size={16} className="text-accent" /><a href="tel:+254700000000" className="hover:text-accent transition-colors">+254 700 000 000</a></li>
-                <li className="flex items-start gap-3"><MapPin size={16} className="text-accent mt-0.5" /><span>Nairobi, Kenya 🇰🇪</span></li>
+                <li className="flex items-center gap-3"><Phone size={16} className="text-accent" /><a href="tel:+254719767590" className="hover:text-accent transition-colors">+254 719 767 590</a></li>
+                <li className="flex items-start gap-3"><MapPin size={16} className="text-accent mt-0.5" /><span>Serving clients across Kenya 🇰🇪</span></li>
               </ul>
             </div>
             <div className="card-elevated p-6">
