@@ -96,7 +96,7 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
                 <h2 className="font-heading text-2xl font-bold text-foreground mb-2">Thank You for Reaching Out!</h2>
                 <p className="text-muted-foreground mb-6">Your message is in safe hands. Our team will review your request and respond within 24 hours.</p>
                 <a
-                  href="https://wa.me/254700000000?text=Hi%20Vintech%2C%20I%20just%20submitted%20a%20quote%20request"
+                  href="https://wa.me/254719767590?text=Hi%20Vintech%2C%20I%20just%20submitted%20a%20quote%20request"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center gap-2"
