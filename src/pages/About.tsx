@@ -31,7 +31,7 @@ const About = () => (
       <div className="container-wide px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <span className="text-accent text-sm font-semibold tracking-widest uppercase">About Vintech</span>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Built in Nairobi. Trusted Across Kenya.</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Built in Kenya. Trusted Nationwide.</h1>
           <p className="text-primary-foreground/70 mt-4 max-w-lg">We're not just another IT company — we're your long-term technology partner, invested in your growth.</p>
         </motion.div>
       </div>
