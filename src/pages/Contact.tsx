@@ -68,7 +68,7 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
             <p className="text-primary-foreground/70 mt-4 max-w-lg">
               {isQuote
                 ? "Tell us about your project and our team will respond within 24 hours with a detailed proposal — completely free, no strings attached."
-                : "Whether you have a question, an idea, or a challenge — our Nairobi-based team is here to help. Reach out and let's find the right solution together."}
+                : "Whether you have a question, an idea, or a challenge — our team is here to help. Reach out and let's find the right solution together."}
             </p>
           </motion.div>
         </div>
