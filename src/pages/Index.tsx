@@ -42,7 +42,7 @@ const Index = () => {
     <Layout>
       <Helmet>
         <title>Vintech Systems and Consulting — Kenya's Trusted IT Partner for Web, Cyber & Hosting</title>
-        <meta name="description" content="Vintech Systems and Consulting — Nairobi's premier technology partner. We deliver professional web development, cybersecurity, managed hosting & IT support trusted by businesses across Kenya. Get a free quote today." />
+        <meta name="description" content="Vintech Systems and Consulting — Kenya's premier technology partner. Professional web development, cybersecurity, managed hosting & IT support trusted by businesses across Kenya. Get a free quote today." />
         <link rel="canonical" href="https://vintechsystems.store/" />
         <meta property="og:title" content="Vintech Systems and Consulting — Kenya's Trusted IT Partner" />
         <meta property="og:description" content="Professional web development, cybersecurity, managed hosting & IT support trusted by businesses across Kenya." />
@@ -51,7 +51,7 @@ const Index = () => {
           "@context": "https://schema.org",
           "@type": "WebPage",
           "name": "Vintech Systems and Consulting — Kenya's Trusted IT Partner",
-          "description": "Nairobi's premier technology partner delivering professional web development, cybersecurity, managed hosting & IT support trusted by businesses across Kenya.",
+          "description": "Kenya's premier technology partner delivering professional web development, cybersecurity, managed hosting & IT support trusted by businesses across the nation.",
           "url": "https://vintechsystems.store/"
         })}</script>
       </Helmet>
@@ -71,7 +71,7 @@ const Index = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="inline-block text-accent text-sm font-semibold tracking-widest uppercase mb-4"
             >
-              Kenya's Trusted Technology Partner
+            Kenya's Trusted Technology Partner
             </motion.span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
               Your Business Deserves{" "}

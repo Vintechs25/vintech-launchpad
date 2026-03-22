@@ -52,7 +52,7 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
     <Layout>
       <Helmet>
         <title>{isQuote ? "Get a Free Quote" : "Contact Us"} — Vintech Systems and Consulting</title>
-        <meta name="description" content={isQuote ? "Request a free, no-obligation quote for web development, cybersecurity, IT support, or managed hosting from Vintech Systems and Consulting in Nairobi, Kenya." : "Contact Vintech Systems and Consulting in Nairobi for professional web development, cybersecurity, and IT solutions. We respond within 24 hours — guaranteed."} />
+        <meta name="description" content={isQuote ? "Request a free, no-obligation quote for web development, cybersecurity, IT support, or managed hosting from Vintech Systems and Consulting in Kenya." : "Contact Vintech Systems and Consulting for professional web development, cybersecurity, and IT solutions anywhere in Kenya. We respond within 24 hours — guaranteed."} />
         <link rel="canonical" href={isQuote ? "https://vintechsystems.store/get-quote" : "https://vintechsystems.store/contact"} />
       </Helmet>
 
@@ -68,7 +68,7 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
             <p className="text-primary-foreground/70 mt-4 max-w-lg">
               {isQuote
                 ? "Tell us about your project and our team will respond within 24 hours with a detailed proposal — completely free, no strings attached."
-                : "Whether you have a question, an idea, or a challenge — our Nairobi-based team is here to help. Reach out and let's find the right solution together."}
+                : "Whether you have a question, an idea, or a challenge — our team is here to help. Reach out and let's find the right solution together."}
             </p>
           </motion.div>
         </div>
@@ -96,7 +96,7 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
                 <h2 className="font-heading text-2xl font-bold text-foreground mb-2">Thank You for Reaching Out!</h2>
                 <p className="text-muted-foreground mb-6">Your message is in safe hands. Our team will review your request and respond within 24 hours.</p>
                 <a
-                  href="https://wa.me/254700000000?text=Hi%20Vintech%2C%20I%20just%20submitted%20a%20quote%20request"
+                  href="https://wa.me/254719767590?text=Hi%20Vintech%2C%20I%20just%20submitted%20a%20quote%20request"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center gap-2"
@@ -152,14 +152,14 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
               <h3 className="font-heading font-semibold text-foreground mb-4">Get in Touch Directly</h3>
               <ul className="space-y-4 text-sm text-muted-foreground">
                 <li className="flex items-center gap-3"><Mail size={16} className="text-accent" /><a href="mailto:info@vintechsystems.store" className="hover:text-accent transition-colors">info@vintechsystems.store</a></li>
-                <li className="flex items-center gap-3"><Phone size={16} className="text-accent" /><a href="tel:+254700000000" className="hover:text-accent transition-colors">+254 700 000 000</a></li>
-                <li className="flex items-start gap-3"><MapPin size={16} className="text-accent mt-0.5" /><span>Nairobi, Kenya 🇰🇪</span></li>
+                <li className="flex items-center gap-3"><Phone size={16} className="text-accent" /><a href="tel:+254719767590" className="hover:text-accent transition-colors">+254 719 767 590</a></li>
+                <li className="flex items-start gap-3"><MapPin size={16} className="text-accent mt-0.5" /><span>Serving clients across Kenya 🇰🇪</span></li>
               </ul>
             </div>
             <div className="card-elevated p-6">
               <h3 className="font-heading font-semibold text-foreground mb-2">Prefer WhatsApp?</h3>
               <p className="text-sm text-muted-foreground mb-4">Most of our clients reach us on WhatsApp for faster responses — we're just a tap away.</p>
-              <a href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center gap-2">
+              <a href="https://wa.me/254719767590" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center gap-2">
                 <MessageCircle size={18} /> Chat on WhatsApp
               </a>
             </div>

@@ -22,8 +22,8 @@ const values = [
 const About = () => (
   <Layout>
       <Helmet>
-        <title>About Vintech — Nairobi's Trusted IT Company | Vintech Systems</title>
-        <meta name="description" content="Vintech Systems and Consulting is a Nairobi-based IT company trusted by businesses across Kenya. Learn about our mission to make enterprise-grade technology accessible to every business." />
+        <title>About Vintech — Kenya's Trusted IT Company | Vintech Systems</title>
+        <meta name="description" content="Vintech Systems and Consulting is a Kenyan IT company trusted by businesses across the nation. Learn about our mission to make enterprise-grade technology accessible to every business." />
         <link rel="canonical" href="https://vintechsystems.store/about" />
       </Helmet>
 
@@ -31,7 +31,7 @@ const About = () => (
       <div className="container-wide px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <span className="text-accent text-sm font-semibold tracking-widest uppercase">About Vintech</span>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Built in Nairobi. Trusted Across Kenya.</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Built in Kenya. Trusted Nationwide.</h1>
           <p className="text-primary-foreground/70 mt-4 max-w-lg">We're not just another IT company — we're your long-term technology partner, invested in your growth.</p>
         </motion.div>
       </div>
@@ -47,7 +47,7 @@ const About = () => (
             Too many Kenyan businesses have been burned by unreliable tech vendors — missed deadlines, hidden fees, websites that break after a month, and zero accountability. We started Vintech to change that.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Based in Nairobi, Vintech Systems and Consulting delivers professional web development, cybersecurity, IT support, and managed hosting to businesses of all sizes across Kenya. We combine deep technical expertise with a genuine understanding of the local market.
+            Based in Kenya, Vintech Systems and Consulting delivers professional web development, cybersecurity, IT support, and managed hosting to businesses of all sizes across the country. We combine deep technical expertise with a genuine understanding of the local market.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Whether you're a startup launching your first website, an SME upgrading your infrastructure, or an enterprise securing sensitive data — we have the skills, the tools, and the track record to deliver.
