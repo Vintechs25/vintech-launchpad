@@ -51,7 +51,7 @@ const Index = () => {
           "@context": "https://schema.org",
           "@type": "WebPage",
           "name": "Vintech Systems and Consulting — Kenya's Trusted IT Partner",
-          "description": "Nairobi's premier technology partner delivering professional web development, cybersecurity, managed hosting & IT support trusted by businesses across Kenya.",
+          "description": "Kenya's premier technology partner delivering professional web development, cybersecurity, managed hosting & IT support trusted by businesses across the nation.",
           "url": "https://vintechsystems.store/"
         })}</script>
       </Helmet>

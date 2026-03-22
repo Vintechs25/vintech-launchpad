@@ -31,7 +31,7 @@ const Footer = () => {
               <img src={vintechLogo} alt={company} className="h-10 w-auto" />
             </div>
             <p className="text-sm text-primary-foreground/60 leading-relaxed">
-              Nairobi's trusted technology partner — delivering professional web development, cybersecurity, IT support, and managed hosting to businesses across Kenya.
+              Kenya's trusted technology partner — delivering professional web development, cybersecurity, IT support, and managed hosting to businesses nationwide.
             </p>
           </div>
 

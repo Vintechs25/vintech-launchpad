@@ -159,7 +159,7 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
             <div className="card-elevated p-6">
               <h3 className="font-heading font-semibold text-foreground mb-2">Prefer WhatsApp?</h3>
               <p className="text-sm text-muted-foreground mb-4">Most of our clients reach us on WhatsApp for faster responses — we're just a tap away.</p>
-              <a href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center gap-2">
+              <a href="https://wa.me/254719767590" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center gap-2">
                 <MessageCircle size={18} /> Chat on WhatsApp
               </a>
             </div>
