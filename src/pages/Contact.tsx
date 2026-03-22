@@ -52,7 +52,7 @@ const ContactPage = ({ isQuote = false }: { isQuote?: boolean }) => {
     <Layout>
       <Helmet>
         <title>{isQuote ? "Get a Free Quote" : "Contact Us"} — Vintech Systems and Consulting</title>
-        <meta name="description" content={isQuote ? "Request a free, no-obligation quote for web development, cybersecurity, IT support, or managed hosting from Vintech Systems and Consulting in Nairobi, Kenya." : "Contact Vintech Systems and Consulting in Nairobi for professional web development, cybersecurity, and IT solutions. We respond within 24 hours — guaranteed."} />
+        <meta name="description" content={isQuote ? "Request a free, no-obligation quote for web development, cybersecurity, IT support, or managed hosting from Vintech Systems and Consulting in Kenya." : "Contact Vintech Systems and Consulting for professional web development, cybersecurity, and IT solutions anywhere in Kenya. We respond within 24 hours — guaranteed."} />
         <link rel="canonical" href={isQuote ? "https://vintechsystems.store/get-quote" : "https://vintechsystems.store/contact"} />
       </Helmet>
 
