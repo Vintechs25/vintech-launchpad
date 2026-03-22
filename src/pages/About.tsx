@@ -47,7 +47,7 @@ const About = () => (
             Too many Kenyan businesses have been burned by unreliable tech vendors — missed deadlines, hidden fees, websites that break after a month, and zero accountability. We started Vintech to change that.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Based in Nairobi, Vintech Systems and Consulting delivers professional web development, cybersecurity, IT support, and managed hosting to businesses of all sizes across Kenya. We combine deep technical expertise with a genuine understanding of the local market.
+            Based in Kenya, Vintech Systems and Consulting delivers professional web development, cybersecurity, IT support, and managed hosting to businesses of all sizes across the country. We combine deep technical expertise with a genuine understanding of the local market.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Whether you're a startup launching your first website, an SME upgrading your infrastructure, or an enterprise securing sensitive data — we have the skills, the tools, and the track record to deliver.
