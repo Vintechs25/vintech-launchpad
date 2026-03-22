@@ -71,7 +71,7 @@ const Index = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="inline-block text-accent text-sm font-semibold tracking-widest uppercase mb-4"
             >
-              Kenya's Trusted Technology Partner
+            Kenya's Trusted Technology Partner
             </motion.span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
               Your Business Deserves{" "}
