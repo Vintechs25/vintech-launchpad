@@ -22,8 +22,8 @@ const values = [
 const About = () => (
   <Layout>
       <Helmet>
-        <title>About Vintech — Nairobi's Trusted IT Company | Vintech Systems</title>
-        <meta name="description" content="Vintech Systems and Consulting is a Nairobi-based IT company trusted by businesses across Kenya. Learn about our mission to make enterprise-grade technology accessible to every business." />
+        <title>About Vintech — Kenya's Trusted IT Company | Vintech Systems</title>
+        <meta name="description" content="Vintech Systems and Consulting is a Kenyan IT company trusted by businesses across the nation. Learn about our mission to make enterprise-grade technology accessible to every business." />
         <link rel="canonical" href="https://vintechsystems.store/about" />
       </Helmet>
 
