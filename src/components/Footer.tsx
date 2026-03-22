@@ -7,8 +7,8 @@ const Footer = () => {
   const { data: info } = useContactInfo();
   const company = info?.company_name || "Vintech Systems and Consulting";
   const email = info?.email || "info@vintechsystems.store";
-  const phone = info?.phone || "+254 700 000 000";
-  const address = info?.address || "Nairobi, Kenya";
+  const phone = info?.phone || "+254 719 767 590";
+  const address = info?.address || "Serving clients across Kenya";
 
   return (
     <footer className="gradient-hero text-primary-foreground relative overflow-hidden">
