@@ -18,8 +18,8 @@ const Services = () => {
   return (
     <Layout>
       <Helmet>
-        <title>IT Services — Web Dev, Cybersecurity & Hosting | Vintech</title>
-        <meta name="description" content="Explore Vintech's technology services: custom web development, cybersecurity audits, managed IT support, cloud hosting, and domain management." />
+        <title>IT Services — Web Dev, Cybersecurity & Hosting in Kenya | Vintech</title>
+        <meta name="description" content="Explore Vintech's professional IT services: custom web development, cybersecurity audits, managed hosting, IT support, and technology consulting — trusted by businesses across Kenya." />
         <link rel="canonical" href="https://vintechsystems.store/services" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -37,9 +37,9 @@ const Services = () => {
       <section className="gradient-hero pt-32 pb-16 overflow-hidden">
         <div className="container-wide px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="text-accent text-sm font-semibold tracking-widest uppercase">What We Offer</span>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Our Services</h1>
-            <p className="text-primary-foreground/70 mt-4 max-w-lg">Enterprise-grade technology solutions designed to grow with your business.</p>
+            <span className="text-accent text-sm font-semibold tracking-widest uppercase">Professional IT Solutions</span>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Services Built for Kenyan Businesses</h1>
+            <p className="text-primary-foreground/70 mt-4 max-w-lg">From startups to established enterprises — we deliver the technology solutions that help you compete, grow, and win.</p>
           </motion.div>
         </div>
       </section>
@@ -56,10 +56,10 @@ const Services = () => {
 
       <SectionWrapper dark>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center max-w-2xl mx-auto">
-          <h2 className="font-heading text-3xl font-bold text-primary-foreground mb-4">Need a Custom Solution?</h2>
-          <p className="text-primary-foreground/70 mb-8">Every business is unique. Let's design a technology strategy tailored to yours.</p>
+          <h2 className="font-heading text-3xl font-bold text-primary-foreground mb-4">Need a Tailored Solution?</h2>
+          <p className="text-primary-foreground/70 mb-8">Every business is unique. Tell us your challenge and we'll design a technology strategy that fits your goals, your budget, and your timeline — guaranteed.</p>
           <Link to="/get-quote" className="btn-primary text-base px-8 py-4">
-            Get a Free Quote <ArrowRight size={18} className="ml-2" />
+            Get Your Free Quote <ArrowRight size={18} className="ml-2" />
           </Link>
         </motion.div>
       </SectionWrapper>

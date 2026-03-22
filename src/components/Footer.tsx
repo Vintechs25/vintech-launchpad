@@ -17,11 +17,11 @@ const Footer = () => {
         {/* Top CTA strip */}
         <div className="card-glass p-6 md:p-8 mb-14 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <h3 className="font-heading font-bold text-lg text-primary-foreground">Ready to get started?</h3>
-            <p className="text-sm text-primary-foreground/60">Let's build something great together.</p>
+            <h3 className="font-heading font-bold text-lg text-primary-foreground">Let's Build Something Great Together</h3>
+            <p className="text-sm text-primary-foreground/60">Get a free, no-obligation quote from Kenya's trusted IT partner.</p>
           </div>
           <Link to="/get-quote" className="btn-primary text-sm whitespace-nowrap">
-            Get a Free Quote <ArrowRight size={16} className="ml-1.5" />
+            Get Your Free Quote <ArrowRight size={16} className="ml-1.5" />
           </Link>
         </div>
 
@@ -31,7 +31,7 @@ const Footer = () => {
               <img src={vintechLogo} alt={company} className="h-10 w-auto" />
             </div>
             <p className="text-sm text-primary-foreground/60 leading-relaxed">
-              Premium technology consulting — web development, cybersecurity, IT support, and managed solutions for growing businesses.
+              Nairobi's trusted technology partner — delivering professional web development, cybersecurity, IT support, and managed hosting to businesses across Kenya.
             </p>
           </div>
 
@@ -84,7 +84,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-primary-foreground/40">
-          <p>© {new Date().getFullYear()} {company}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {company}. All rights reserved. 🇰🇪 Proudly Kenyan.</p>
           <div className="flex gap-6">
             <Link to="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-accent transition-colors">Terms of Service</Link>

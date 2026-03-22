@@ -13,26 +13,26 @@ const fadeUp = {
 };
 
 const values = [
-  { icon: Target, title: "Mission", desc: "Deliver reliable tech solutions that help businesses grow" },
-  { icon: Eye, title: "Vision", desc: "Be East Africa's most trusted technology partner" },
-  { icon: Users, title: "Team", desc: "Skilled engineers passionate about solving real problems" },
-  { icon: Code2, title: "Approach", desc: "Transparent pricing, clear timelines, honest communication" },
+  { icon: Target, title: "Our Mission", desc: "To empower Kenyan businesses with reliable, world-class technology — at fair prices." },
+  { icon: Eye, title: "Our Vision", desc: "To become East Africa's most trusted name in IT solutions and digital transformation." },
+  { icon: Users, title: "Our Team", desc: "Experienced engineers who understand the Kenyan market and are passionate about your success." },
+  { icon: Code2, title: "Our Promise", desc: "Transparent pricing, clear timelines, honest communication — no surprises, ever." },
 ];
 
 const About = () => (
   <Layout>
       <Helmet>
-        <title>About Us — Mission & Team | Vintech Systems and Consulting</title>
-        <meta name="description" content="Learn about Vintech Systems and Consulting: our mission to make enterprise tech accessible, our experienced engineering team, and our results-driven approach." />
+        <title>About Vintech — Nairobi's Trusted IT Company | Vintech Systems</title>
+        <meta name="description" content="Vintech Systems and Consulting is a Nairobi-based IT company trusted by businesses across Kenya. Learn about our mission to make enterprise-grade technology accessible to every business." />
         <link rel="canonical" href="https://vintechsystems.store/about" />
       </Helmet>
 
     <section className="gradient-hero pt-32 pb-16 overflow-hidden">
       <div className="container-wide px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase">About Us</span>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Our Story</h1>
-          <p className="text-primary-foreground/70 mt-4 max-w-lg">Built by engineers, driven by results.</p>
+          <span className="text-accent text-sm font-semibold tracking-widest uppercase">About Vintech</span>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Built in Nairobi. Trusted Across Kenya.</h1>
+          <p className="text-primary-foreground/70 mt-4 max-w-lg">We're not just another IT company — we're your long-term technology partner, invested in your growth.</p>
         </motion.div>
       </div>
     </section>
@@ -41,16 +41,19 @@ const About = () => (
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Technology That Drives Business Forward
+            Why We Exist
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Vintech Systems and Consulting is a Nairobi-based technology firm offering web development, cybersecurity, IT support, and managed hosting to businesses across Kenya and East Africa.
+            Too many Kenyan businesses have been burned by unreliable tech vendors — missed deadlines, hidden fees, websites that break after a month, and zero accountability. We started Vintech to change that.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            We started because too many businesses were paying too much for unreliable tech vendors and cookie-cutter solutions. Vintech was built to offer honest, hands-on engineering — with transparent pricing and real accountability.
+            Based in Nairobi, Vintech Systems and Consulting delivers professional web development, cybersecurity, IT support, and managed hosting to businesses of all sizes across Kenya. We combine deep technical expertise with a genuine understanding of the local market.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Whether you're a startup launching your first website or an established company upgrading your infrastructure, we're here to help you build with confidence.
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Whether you're a startup launching your first website, an SME upgrading your infrastructure, or an enterprise securing sensitive data — we have the skills, the tools, and the track record to deliver.
+          </p>
+          <p className="text-foreground font-medium">
+            When you work with Vintech, you get a partner who shows up, communicates clearly, and treats your business like our own.
           </p>
         </motion.div>
         <div className="grid grid-cols-2 gap-6">
@@ -75,8 +78,9 @@ const About = () => (
 
     <SectionWrapper className="bg-secondary">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-10">
-        <span className="text-accent text-sm font-semibold tracking-widest uppercase">Our Stack</span>
+        <span className="text-accent text-sm font-semibold tracking-widest uppercase">Enterprise-Grade Stack</span>
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-2">Technologies We Work With</h2>
+        <p className="text-muted-foreground mt-2 max-w-md mx-auto">We use the same tools trusted by global tech leaders — adapted for the Kenyan business environment.</p>
       </motion.div>
       <div className="flex flex-wrap justify-center gap-3">
         {tools.map((t, i) => (
@@ -96,10 +100,10 @@ const About = () => (
 
     <SectionWrapper dark>
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center max-w-2xl mx-auto">
-        <h2 className="font-heading text-3xl font-bold text-primary-foreground mb-4">Let's Work Together</h2>
-        <p className="text-primary-foreground/70 mb-8">Ready to build something great? We'd love to hear from you.</p>
+        <h2 className="font-heading text-3xl font-bold text-primary-foreground mb-4">Ready to Work With a Team That Actually Delivers?</h2>
+        <p className="text-primary-foreground/70 mb-8">No empty promises. No inflated timelines. Just professional, reliable technology solutions built for your success. Let's talk.</p>
         <Link to="/get-quote" className="btn-primary text-base px-8 py-4">
-          Get a Free Quote <ArrowRight size={18} className="ml-2" />
+          Get Your Free Quote <ArrowRight size={18} className="ml-2" />
         </Link>
       </motion.div>
     </SectionWrapper>

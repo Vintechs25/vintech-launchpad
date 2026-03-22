@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, Zap, Users, Award, Clock, CheckCircle2
+  ArrowRight, Zap, Users, Award, Clock, CheckCircle2, ShieldCheck, HeartHandshake, TrendingUp
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -14,17 +14,17 @@ import { useServices, useProjects, useTestimonials, useStats } from "@/hooks/use
 import heroBg from "@/assets/hero-bg.jpg";
 
 const whyUs = [
-  { icon: Zap, title: "Fast Turnaround", desc: "We use agile sprints so your project moves from concept to launch quickly." },
-  { icon: Users, title: "Dedicated Support", desc: "You work directly with our engineers — no outsourced call centres." },
-  { icon: Award, title: "Real Results", desc: "Clients across East Africa trust us to deliver reliable, scalable solutions." },
-  { icon: Clock, title: "Ongoing Maintenance", desc: "We don't disappear after launch — ongoing support and monitoring included." },
+  { icon: Zap, title: "Rapid Delivery", desc: "From brief to launch in record time. Our agile methodology means your business never waits — we move as fast as you do." },
+  { icon: HeartHandshake, title: "Dedicated Partnership", desc: "You speak directly with our engineers — no middlemen, no call centres. Your success is personal to us." },
+  { icon: ShieldCheck, title: "Proven & Trusted", desc: "Kenyan businesses rely on Vintech because we deliver — on time, on budget, every single time." },
+  { icon: TrendingUp, title: "Long-Term Growth", desc: "We don't disappear after launch. Continuous monitoring, updates, and strategic support keep you ahead of the competition." },
 ];
 
 const trustBadges = [
-  "Secure Infrastructure",
-  "Nairobi-Based Team",
-  "Transparent Pricing",
-  "Ongoing Support",
+  "🇰🇪 Proudly Kenyan",
+  "Enterprise-Grade Security",
+  "24/7 Technical Support",
+  "Transparent Pricing — No Hidden Fees",
 ];
 
 const fadeUp = {
@@ -41,17 +41,17 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Vintech Systems and Consulting — Web Development, Cybersecurity & IT Solutions</title>
-        <meta name="description" content="Vintech Systems and Consulting delivers enterprise-grade web development, cybersecurity, IT support, and managed hosting for growing businesses worldwide. Get a free quote today." />
+        <title>Vintech Systems and Consulting — Kenya's Trusted IT Partner for Web, Cyber & Hosting</title>
+        <meta name="description" content="Vintech Systems and Consulting — Nairobi's premier technology partner. We deliver professional web development, cybersecurity, managed hosting & IT support trusted by businesses across Kenya. Get a free quote today." />
         <link rel="canonical" href="https://vintechsystems.store/" />
-        <meta property="og:title" content="Vintech Systems and Consulting — Web Development, Cybersecurity & IT Solutions" />
-        <meta property="og:description" content="Enterprise-grade web development, cybersecurity, IT support, and managed hosting for growing businesses." />
+        <meta property="og:title" content="Vintech Systems and Consulting — Kenya's Trusted IT Partner" />
+        <meta property="og:description" content="Professional web development, cybersecurity, managed hosting & IT support trusted by businesses across Kenya." />
         <meta property="og:url" content="https://vintechsystems.store/" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "name": "Vintech Systems and Consulting — Web Development, Cybersecurity & IT Solutions",
-          "description": "Enterprise-grade web development, cybersecurity, IT support, and managed hosting for growing businesses worldwide.",
+          "name": "Vintech Systems and Consulting — Kenya's Trusted IT Partner",
+          "description": "Nairobi's premier technology partner delivering professional web development, cybersecurity, managed hosting & IT support trusted by businesses across Kenya.",
           "url": "https://vintechsystems.store/"
         })}</script>
       </Helmet>
@@ -71,21 +71,21 @@ const Index = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="inline-block text-accent text-sm font-semibold tracking-widest uppercase mb-4"
             >
-              Technology Consulting
+              Kenya's Trusted Technology Partner
             </motion.span>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-              Secure. Host.{" "}
-              <span className="text-gradient">Empower.</span>
+              Your Business Deserves{" "}
+              <span className="text-gradient">World-Class Technology.</span>
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8 max-w-lg">
-              We help businesses build robust digital products, secure their infrastructure, and scale with confidence.
+              We build, secure, and manage the digital infrastructure that powers Kenya's most ambitious businesses. From custom websites to bulletproof cybersecurity — partner with a team that truly understands your market.
             </p>
             <div className="flex flex-wrap gap-4 mb-10">
               <Link to="/get-quote" className="btn-primary text-base px-8 py-4">
-                Get a Free Quote <ArrowRight size={18} className="ml-2" />
+                Get Your Free Quote <ArrowRight size={18} className="ml-2" />
               </Link>
               <Link to="/services" className="btn-outline text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 text-base px-8 py-4">
-                Our Services
+                Explore Our Services
               </Link>
             </div>
             {/* Trust badges */}
@@ -111,9 +111,9 @@ const Index = () => {
         <SectionWrapper>
           <div className="text-center mb-14">
             <span className="text-accent text-sm font-semibold tracking-widest uppercase">What We Do</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-3">Our Services</h2>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-3">Solutions That Drive Results</h2>
             <div className="section-divider mb-4" />
-            <p className="text-muted-foreground max-w-lg mx-auto">End-to-end technology solutions tailored for your business.</p>
+            <p className="text-muted-foreground max-w-lg mx-auto">End-to-end technology solutions designed for the Kenyan business landscape — reliable, scalable, and built to give you a competitive edge.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
@@ -128,8 +128,8 @@ const Index = () => {
       {/* Why Choose Us */}
       <SectionWrapper className="bg-secondary">
         <div className="text-center mb-14">
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase">Why Vintech</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-3">Why Choose Us</h2>
+          <span className="text-accent text-sm font-semibold tracking-widest uppercase">The Vintech Advantage</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-3">Why Leading Businesses Choose Vintech</h2>
           <div className="section-divider" />
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -150,8 +150,8 @@ const Index = () => {
         <SectionWrapper>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14">
             <div>
-              <span className="text-accent text-sm font-semibold tracking-widest uppercase">Our Work</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">Featured Projects</h2>
+              <span className="text-accent text-sm font-semibold tracking-widest uppercase">Our Track Record</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2">Projects That Speak for Themselves</h2>
             </div>
             <Link to="/projects" className="text-accent font-medium text-sm flex items-center gap-1 mt-4 md:mt-0 hover:underline underline-offset-4 transition-all">
               View all projects <ArrowRight size={14} />
@@ -183,8 +183,8 @@ const Index = () => {
       {testimonials.length > 0 && (
         <SectionWrapper>
           <div className="text-center mb-14">
-            <span className="text-accent text-sm font-semibold tracking-widest uppercase">Testimonials</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-3">What Our Clients Say</h2>
+            <span className="text-accent text-sm font-semibold tracking-widest uppercase">Client Success Stories</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-2 mb-3">Trusted by Businesses Across Kenya</h2>
             <div className="section-divider" />
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -201,11 +201,11 @@ const Index = () => {
       <SectionWrapper dark>
         <div className="pattern-dots absolute inset-0 pointer-events-none" />
         <div className="text-center max-w-2xl mx-auto relative">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Ready to Transform Your Business?</h2>
-          <p className="text-primary-foreground/70 mb-8 text-lg">Let's discuss how Vintech can help you build, secure, and scale your technology.</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Stop Losing Customers to Poor Technology</h2>
+          <p className="text-primary-foreground/70 mb-8 text-lg">Every day without a professional digital presence costs your business real revenue. Let's fix that — talk to our team today and get a free, no-obligation consultation.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/get-quote" className="btn-primary text-base px-8 py-4">Get a Free Quote <ArrowRight size={18} className="ml-2" /></Link>
-            <Link to="/contact" className="btn-outline text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 text-base px-8 py-4">Contact Us</Link>
+            <Link to="/get-quote" className="btn-primary text-base px-8 py-4">Get Your Free Quote <ArrowRight size={18} className="ml-2" /></Link>
+            <Link to="/contact" className="btn-outline text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 text-base px-8 py-4">Talk to an Expert</Link>
           </div>
         </div>
       </SectionWrapper>
