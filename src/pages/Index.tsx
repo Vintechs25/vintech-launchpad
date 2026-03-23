@@ -59,7 +59,7 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover" />
+          <img src={heroBg} alt="" className="w-full h-full object-cover" fetchPriority="high" />
           <div className="absolute inset-0 gradient-hero opacity-85" />
           <div className="absolute inset-0 pattern-dots" />
         </div>
@@ -196,6 +196,18 @@ const Index = () => {
           </div>
         </SectionWrapper>
       )}
+
+      {/* Social Proof Strip */}
+      <SectionWrapper className="bg-secondary">
+        <div className="text-center mb-8">
+          <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">Trusted Across Industries</span>
+        </div>
+        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
+          {["Financial Services", "Healthcare", "Education", "Retail & E-Commerce", "NGOs & Non-Profits", "Government"].map((industry) => (
+            <span key={industry} className="text-sm font-medium text-muted-foreground/60 tracking-wide">{industry}</span>
+          ))}
+        </div>
+      </SectionWrapper>
 
       {/* CTA Banner */}
       <SectionWrapper dark>

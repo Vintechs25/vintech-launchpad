@@ -26,9 +26,9 @@ const Projects = () => {
       <section className="gradient-hero pt-32 pb-16 overflow-hidden">
         <div className="container-wide px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="text-accent text-sm font-semibold tracking-widest uppercase">Our Work</span>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Projects</h1>
-            <p className="text-primary-foreground/70 mt-4 max-w-lg">Real results for real businesses. Here's a selection of our recent work.</p>
+            <span className="text-accent text-sm font-semibold tracking-widest uppercase">Our Track Record</span>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mt-2">Projects That Speak for Themselves</h1>
+            <p className="text-primary-foreground/70 mt-4 max-w-lg">Don't take our word for it — see the real results we've delivered for businesses across Kenya.</p>
           </motion.div>
         </div>
       </section>
