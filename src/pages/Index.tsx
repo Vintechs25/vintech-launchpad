@@ -59,7 +59,7 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover" />
+          <img src={heroBg} alt="" className="w-full h-full object-cover" fetchPriority="high" />
           <div className="absolute inset-0 gradient-hero opacity-85" />
           <div className="absolute inset-0 pattern-dots" />
         </div>
