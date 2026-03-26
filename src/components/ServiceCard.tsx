@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Globe, Shield, Headphones, Brain, Server, Link2, LucideIcon, HelpCircle, ArrowRight } from "lucide-react";
+import { Globe, Shield, Headphones, Brain, Server, Link2, Monitor, LucideIcon, HelpCircle, ArrowRight } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
-  Globe, Shield, Headphones, Brain, Server, Link2,
+  Globe, Shield, Headphones, Brain, Server, Link2, Monitor,
 };
 
 interface ServiceCardProps {
